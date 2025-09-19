@@ -23,6 +23,7 @@
         --light-bg: #ecf0f1;
         --text-dark: #2c3e50;
         --text-light: #ecf0f1;
+        --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       }
 
       .dark-mode {
@@ -39,9 +40,10 @@
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         margin: 0;
         padding: 0;
-        transition: all 0.3s ease;
+        transition: var(--transition);
         background-color: var(--light-bg);
         color: var(--text-dark);
+        overflow-x: hidden;
       }
 
       body.dark-mode {
@@ -52,7 +54,7 @@
       .navbar {
         background-color: rgba(255, 255, 255, 0.9) !important;
         backdrop-filter: blur(10px);
-        transition: all 0.3s ease;
+        transition: var(--transition);
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         z-index: 1000;
       }
@@ -91,7 +93,7 @@
         max-width: 800px;
         opacity: 1;
         transform: translateY(0);
-        transition: all 0.8s ease;
+        transition: var(--transition);
       }
 
       .hero-content.scrolled {
@@ -105,12 +107,25 @@
         margin-bottom: 1rem;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         letter-spacing: 2px;
+        animation: fadeInUp 1s ease;
       }
 
       .hero-subtitle {
         font-size: 1.5rem;
         margin-bottom: 2rem;
         text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        animation: fadeInUp 1s ease 0.3s both;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
 
       .nav-link {
@@ -136,7 +151,7 @@
         bottom: -5px;
         left: 50%;
         background-color: var(--primary-color);
-        transition: all 0.3s ease;
+        transition: var(--transition);
       }
 
       .nav-link:hover::after {
@@ -146,11 +161,16 @@
 
       .site-logo {
         height: 60px;
-        width: 6سس0px;
+        width: 60px;
         object-fit: cover;
         border-radius: 50%;
         margin-right: 10px;
         margin-left: 10px;
+        transition: var(--transition);
+      }
+
+      .site-logo:hover {
+        transform: rotate(10deg) scale(1.1);
       }
 
       .dark-mode-toggle {
@@ -159,11 +179,12 @@
         font-size: 1.2rem;
         cursor: pointer;
         color: var(--text-dark);
-        transition: color 0.3s ease;
+        transition: var(--transition);
       }
 
       .dark-mode-toggle:hover {
         color: var(--primary-color) !important;
+        transform: rotate(180deg);
       }
 
       body.dark-mode .dark-mode-toggle {
@@ -176,6 +197,608 @@
         font-weight: 700;
         font-size: 1.5rem;
         color: var(--primary-color) !important;
+      }
+
+      /* Section Divider */
+      .section-divider {
+        height: 80px;
+        position: relative;
+        margin: 0;
+        z-index: 1;
+      }
+
+      .divider-1 {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+      }
+
+      .divider-2 {
+        background: linear-gradient(
+          135deg,
+          var(--secondary-color),
+          var(--accent-color)
+        );
+      }
+
+      .divider-3 {
+        background: linear-gradient(
+          135deg,
+          var(--accent-color),
+          var(--primary-color)
+        );
+      }
+
+      .divider-wave {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 40px;
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='1' d='M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,202.7C672,203,768,181,864,170.7C960,160,1056,160,1152,165.3C1248,171,1344,181,1392,186.7L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E")
+          bottom center no-repeat;
+        background-size: 100% 100%;
+      }
+
+      body.dark-mode .divider-wave {
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%231a1a2e' fill-opacity='1' d='M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,202.7C672,203,768,181,864,170.7C960,160,1056,160,1152,165.3C1248,171,1344,181,1392,186.7L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E")
+          bottom center no-repeat;
+      }
+
+      /* Featured Events Slider */
+      .featured-events {
+        padding: 5rem 2rem;
+        position: relative;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 2.5rem;
+        margin: 0 0 3rem;
+        color: var(--primary-color);
+        position: relative;
+        padding-bottom: 1rem;
+        animation: slideInUp 0.6s ease;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: var(--primary-color);
+        border-radius: 2px;
+        animation: expandWidth 0.8s ease;
+      }
+
+      @keyframes slideInUp {
+        from {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes expandWidth {
+        from {
+          width: 0;
+        }
+        to {
+          width: 80px;
+        }
+      }
+
+      .slider-container {
+        position: relative;
+        max-width: 1200px;
+        margin: 0 auto;
+        overflow: hidden;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      body.dark-mode .slider-container {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .slider-wrapper {
+        display: flex;
+        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .slide {
+        min-width: 100%;
+        position: relative;
+        height: 500px;
+      }
+
+      .slide-content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 2rem;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+        color: white;
+        transform: translateY(50px);
+        opacity: 0;
+        transition: var(--transition);
+      }
+
+      .slide.active .slide-content {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      .slide-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .slider-nav {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 10px;
+        z-index: 2;
+      }
+
+      .nav-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .nav-dot.active {
+        background: var(--primary-color);
+        transform: scale(1.3);
+      }
+
+      .slider-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+        color: white;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: var(--transition);
+        z-index: 3;
+      }
+
+      .slider-btn:hover {
+        background: var(--primary-color);
+        transform: translateY(-50%) scale(1.1);
+      }
+
+      .slider-btn.prev {
+        left: 20px;
+      }
+
+      .slider-btn.next {
+        right: 20px;
+      }
+
+      /* Categories Section */
+      .categories-section {
+        padding: 5rem 2rem;
+        position: relative;
+        background: var(--light-bg);
+      }
+
+      body.dark-mode .categories-section {
+        background: var(--dark-bg);
+      }
+
+      .categories-container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .categories-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-top: 3rem;
+      }
+
+      .category-btn {
+        padding: 1.5rem 2.5rem;
+        border: none;
+        border-radius: 50px;
+        background: white;
+        color: var(--text-dark);
+        font-size: 1.2rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        position: relative;
+        overflow: hidden;
+        min-width: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      body.dark-mode .category-btn {
+        background: #2c3e50;
+        color: var(--text-light);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .category-btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        transition: 0.5s;
+      }
+
+      .category-btn:hover::before {
+        left: 100%;
+      }
+
+      .category-btn:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        background: var(--primary-color);
+        color: white;
+      }
+
+      .category-icon {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .category-btn.active {
+        background: var(--primary-color);
+        color: white;
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(231, 76, 60, 0.3);
+      }
+
+      /* Latest Events Section */
+      .latest-events {
+        padding: 5rem 2rem;
+      }
+
+      .events-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 2.5rem;
+        margin-top: 3rem;
+      }
+
+      .event-card {
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        transition: var(--transition);
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      .event-card.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      body.dark-mode .event-card {
+        background: #2c3e50;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .event-card:hover {
+        transform: translateY(-10px) !important;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      .event-image {
+        height: 220px;
+        width: 100%;
+        object-fit: cover;
+        transition: var(--transition);
+      }
+
+      .event-card:hover .event-image {
+        transform: scale(1.05);
+      }
+
+      .event-content {
+        padding: 2rem;
+      }
+
+      .event-title {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        color: var(--text-dark);
+        font-weight: 700;
+      }
+
+      body.dark-mode .event-title {
+        color: var(--text-light);
+      }
+
+      .event-date {
+        color: var(--secondary-color);
+        font-weight: 600;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        font-size: 0.95rem;
+      }
+
+      .event-date i {
+        margin-left: 0.5rem;
+      }
+
+      .event-description {
+        margin-bottom: 1.5rem;
+        line-height: 1.7;
+        color: var(--text-dark);
+        opacity: 0.9;
+      }
+
+      body.dark-mode .event-description {
+        color: var(--text-light);
+      }
+
+      .event-location {
+        color: var(--accent-color);
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        font-size: 0.95rem;
+      }
+
+      .event-location i {
+        margin-left: 0.5rem;
+      }
+
+      .btn-primary {
+        background-color: var(--primary-color);
+        border: none;
+        padding: 0.75rem 1.5rem;
+        border-radius: 30px;
+        font-weight: 600;
+        transition: var(--transition);
+        color: white;
+        text-decoration: none;
+        display: inline-block;
+        text-align: center;
+      }
+
+      .btn-primary:hover {
+        background-color: #c0392b;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(231, 76, 60, 0.3);
+      }
+
+      /* Why Choose Section */
+      .why-choose {
+        padding: 5rem 2rem;
+        background: var(--light-bg);
+      }
+
+      body.dark-mode .why-choose {
+        background: var(--dark-bg);
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .feature-card {
+        text-align: center;
+        padding: 2.5rem 2rem;
+        border-radius: 20px;
+        background: white;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        transition: var(--transition);
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      .feature-card.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      body.dark-mode .feature-card {
+        background: #2c3e50;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .feature-card:hover {
+        transform: translateY(-10px) !important;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .feature-icon {
+        font-size: 3rem;
+        color: var(--primary-color);
+        margin-bottom: 1.5rem;
+        transition: var(--transition);
+      }
+
+      .feature-card:hover .feature-icon {
+        transform: rotate(10deg) scale(1.1);
+      }
+
+      .feature-title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: var(--text-dark);
+        font-weight: 700;
+      }
+
+      body.dark-mode .feature-title {
+        color: var(--text-light);
+      }
+
+      .feature-description {
+        line-height: 1.7;
+        color: var(--text-dark);
+        opacity: 0.9;
+      }
+
+      body.dark-mode .feature-description {
+        color: var(--text-light);
+      }
+
+      /* Footer */
+      footer {
+        background: var(--dark-bg);
+        color: var(--text-light);
+        padding: 4rem 2rem 2rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .footer-wave {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 40px;
+        transform: rotate(180deg);
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%231a1a2e' fill-opacity='1' d='M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,202.7C672,203,768,181,864,170.7C960,160,1056,160,1152,165.3C1248,171,1344,181,1392,186.7L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E")
+          bottom center no-repeat;
+        background-size: 100% 100%;
+      }
+
+      body.dark-mode footer {
+        background: #121220;
+      }
+
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 3rem;
+        margin-bottom: 3rem;
+      }
+
+      .footer-col h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        position: relative;
+        padding-bottom: 0.5rem;
+      }
+
+      .footer-col h3::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 3px;
+        background: var(--primary-color);
+      }
+
+      .social-links {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+
+      .social-link {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.2rem;
+        transition: var(--transition);
+      }
+
+      .social-link:hover {
+        background: var(--primary-color);
+        transform: translateY(-5px);
+      }
+
+      .footer-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .footer-links li {
+        margin-bottom: 0.8rem;
+      }
+
+      .footer-links a {
+        color: var(--text-light);
+        text-decoration: none;
+        transition: var(--transition);
+        opacity: 0.8;
+      }
+
+      .footer-links a:hover {
+        color: var(--primary-color);
+        opacity: 1;
+        padding-left: 5px;
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 0.9rem;
+        opacity: 0.8;
+      }
+
+      .contact-info {
+        margin-top: 1rem;
+        line-height: 1.8;
+      }
+
+      .contact-info i {
+        color: var(--primary-color);
+        margin-left: 0.5rem;
       }
 
       @media (max-width: 768px) {
@@ -195,6 +818,30 @@
           margin: 0 5px;
           padding: 0.5rem 0.75rem;
         }
+
+        .section-title {
+          font-size: 2rem;
+        }
+
+        .featured-events,
+        .categories-section,
+        .latest-events,
+        .why-choose {
+          padding: 3rem 1rem;
+        }
+
+        .events-grid,
+        .features-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .slider-container {
+          height: 400px;
+        }
+
+        .slide {
+          height: 400px;
+        }
       }
 
       @media (max-width: 576px) {
@@ -204,6 +851,20 @@
 
         .hero-subtitle {
           font-size: 1rem;
+        }
+
+        .section-title {
+          font-size: 1.8rem;
+        }
+
+        .category-btn {
+          min-width: 150px;
+          padding: 1rem 1.5rem;
+          font-size: 1rem;
+        }
+
+        .footer-grid {
+          gap: 2rem;
         }
       }
 
@@ -290,48 +951,445 @@
         </div>
       </section>
     </header>
+
     <main>
-      <h1>test</h1>
-      <h2>aaaaaaaa nnnnnn bbbbbbbbbb dddddddddd</h2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum iusto
-        suscipit quaerat eaque repudiandae minima harum quam saepe et cum itaque
-        deleniti reiciendis temporibus voluptates laboriosam, sint ex soluta
-        excepturi.
-      </p>
-      <h2>aaaaaaaa nnnnnn bbbbbbbbbb dddddddddd</h2>
+      <!-- Featured Events Slider Section -->
+      <section class="featured-events">
+        <h2 class="section-title">فعاليات بارزة هذا الأسبوع</h2>
+        <div class="slider-container">
+          <div class="slider-wrapper" id="sliderWrapper">
+            <!-- Slide 1 -->
+            <div class="slide active">
+              <img
+                src="https://placehold.co/1200x500/e74c3c/ffffff?text=مهرجان+دمشق+الثقافي"
+                alt="مهرجان دمشق الثقافي"
+                class="slide-image"
+              />
+              <div class="slide-content">
+                <h3>مهرجان دمشق الثقافي</h3>
+                <p>
+                  تجربة ثقافية فريدة تجمع بين التراث والحداثة في قلب العاصمة
+                </p>
+                <div class="d-flex align-items-center">
+                  <span class="badge bg-primary me-2">ثقافي</span>
+                  <span>15-20 أكتوبر 2024</span>
+                </div>
+              </div>
+            </div>
 
-      <h1>test</h1>
-      <h2>aaaaaaaa nnnnnn bbbbbbbbbb dddddddddd</h2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum iusto
-        suscipit quaerat eaque repudiandae minima harum quam saepe et cum itaque
-        deleniti reiciendis temporibus voluptates laboriosam, sint ex soluta
-        excepturi.
-      </p>
-      <h2>aaaaaaaa nnnnnn bbbbbbbbbb dddddddddd</h2>
+            <!-- Slide 2 -->
+            <div class="slide">
+              <img
+                src="https://placehold.co/1200x500/3498db/ffffff?text=معرض+حلب+الفنون"
+                alt="معرض حلب للفنون"
+                class="slide-image"
+              />
+              <div class="slide-content">
+                <h3>معرض حلب للفنون</h3>
+                <p>
+                  استعراض لأعمال الفنانين السوريين المتميزين في قلب مدينة حلب
+                </p>
+                <div class="d-flex align-items-center">
+                  <span class="badge bg-info me-2">فني</span>
+                  <span>5-12 نوفمبر 2024</span>
+                </div>
+              </div>
+            </div>
 
-      <h1>test</h1>
-      <h2>aaaaaaaa nnnnnn bbbbbbbbbb dddddddddd</h2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum iusto
-        suscipit quaerat eaque repudiandae minima harum quam saepe et cum itaque
-        deleniti reiciendis temporibus voluptates laboriosam, sint ex soluta
-        excepturi.
-      </p>
-      <h2>aaaaaaaa nnnnnn bbbbbbbbbb dddddddddd</h2>
+            <!-- Slide 3 -->
+            <div class="slide">
+              <img
+                src="https://placehold.co/1200x500/2ecc71/ffffff?text=سوق+حمص+اليدوية"
+                alt="سوق حمص اليدوية"
+                class="slide-image"
+              />
+              <div class="slide-content">
+                <h3>سوق حمص للمنتجات اليدوية</h3>
+                <p>دعم الحرفيين المحليين واكتشاف المنتجات التقليدية الفريدة</p>
+                <div class="d-flex align-items-center">
+                  <span class="badge bg-success me-2">يدوي</span>
+                  <span>25-30 نوفمبر 2024</span>
+                </div>
+              </div>
+            </div>
 
-      <h1>test</h1>
-      <h2>aaaaaaaa nnnnnn bbbbbbbbbb dddddddddd</h2>
-            <h2>aaaaaaaa nnnnnn bbbbbbbbbb dddddddddd</h2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum iusto
-        suscipit quaerat eaque repudiandae minima harum quam saepe et cum itaque
-        deleniti reiciendis temporibus voluptates laboriosam, sint ex soluta
-        excepturi.
-      </p>
-      <h2>aaaaaaaa nnnnnn bbbbbbbbbb dddddddddd</h2>
+            <!-- Slide 4 -->
+            <div class="slide">
+              <img
+                src="https://placehold.co/1200x500/f39c12/ffffff?text=مهرجان+اللاذقية+الموسيقي"
+                alt="مهرجان اللاذقية الموسيقي"
+                class="slide-image"
+              />
+              <div class="slide-content">
+                <h3>مهرجان اللاذقية الموسيقي</h3>
+                <p>أمسية موسيقية تجمع نخبة من عازفي سوريا على مسرح البحر</p>
+                <div class="d-flex align-items-center">
+                  <span class="badge bg-warning me-2">موسيقي</span>
+                  <span>10-15 ديسمبر 2024</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="slide">
+              <img
+                src="https://placehold.co/1200x500/9b59b6/ffffff?text=ماراثون+طرطوس"
+                alt="ماراثون طرطوس"
+                class="slide-image"
+              />
+              <div class="slide-content">
+                <h3>ماراثون طرطوس الدولي</h3>
+                <p>فعالية رياضية تجوب أجمل شوارع طرطوس على ساحل المتوسط</p>
+                <div class="d-flex align-items-center">
+                  <span class="badge bg-purple me-2">رياضي</span>
+                  <span>20-25 ديسمبر 2024</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button class="slider-btn prev" id="prevBtn">
+            <i class="bi bi-chevron-left"></i>
+          </button>
+          <button class="slider-btn next" id="nextBtn">
+            <i class="bi bi-chevron-right"></i>
+          </button>
+
+          <div class="slider-nav" id="sliderNav">
+            <div class="nav-dot active" data-slide="0"></div>
+            <div class="nav-dot" data-slide="1"></div>
+            <div class="nav-dot" data-slide="2"></div>
+            <div class="nav-dot" data-slide="3"></div>
+            <div class="nav-dot" data-slide="4"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Divider 1 -->
+      <div class="section-divider divider-1">
+        <div class="divider-wave"></div>
+      </div>
+
+      <!-- Categories Section -->
+      <section class="categories-section">
+        <div class="categories-container">
+          <h2 class="section-title">تصنيفات سريعة</h2>
+          <div class="categories-grid">
+            <button class="category-btn active" data-category="all">
+              <i class="bi bi-grid-3x3 category-icon"></i>
+              <span>جميع الفعاليات</span>
+            </button>
+            <button class="category-btn" data-category="cultural">
+              <i class="bi bi-music-note-beamed category-icon"></i>
+              <span>ثقافية</span>
+            </button>
+            <button class="category-btn" data-category="art">
+              <i class="bi bi-easel category-icon"></i>
+              <span>فنية</span>
+            </button>
+            <button class="category-btn" data-category="sports">
+              <i class="bi bi-trophy category-icon"></i>
+              <span>رياضية</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Divider 2 -->
+      <div class="section-divider divider-2">
+        <div class="divider-wave"></div>
+      </div>
+
+      <!-- Latest Events Section -->
+      <section class="latest-events">
+        <h2 class="section-title">أحدث الفعاليات</h2>
+        <div class="events-grid">
+          <!-- Event 1 -->
+          <div class="event-card">
+            <img
+              src="https://placehold.co/600x400/e74c3c/ffffff?text=ندوة+ثقافية"
+              alt="ندوة ثقافية"
+              class="event-image"
+            />
+            <div class="event-content">
+              <h3 class="event-title">ندوة حول التراث السوري</h3>
+              <div class="event-date">
+                <i class="bi bi-calendar-event"></i> 12 أكتوبر 2024
+              </div>
+              <p class="event-description">
+                ندوة تناقش أهمية الحفاظ على التراث السوري وسبل تطويره في العصر
+                الحديث.
+              </p>
+              <div class="event-location">
+                <i class="bi bi-geo-alt"></i> دمشق، المركز الثقافي
+              </div>
+              <a href="#" class="btn btn-primary">عرض التفاصيل</a>
+            </div>
+          </div>
+
+          <!-- Event 2 -->
+          <div class="event-card">
+            <img
+              src="https://placehold.co/600x400/3498db/ffffff?text=ورشة+فنية"
+              alt="ورشة فنية"
+              class="event-image"
+            />
+            <div class="event-content">
+              <h3 class="event-title">ورشة الرسم بالحبر</h3>
+              <div class="event-date">
+                <i class="bi bi-calendar-event"></i> 18 أكتوبر 2024
+              </div>
+              <p class="event-description">
+                ورشة عمل لتعليم تقنيات الرسم بالحبر مع فنانين محترفين من مختلف
+                المحافظات.
+              </p>
+              <div class="event-location">
+                <i class="bi bi-geo-alt"></i> حلب، مركز الفنون
+              </div>
+              <a href="#" class="btn btn-primary">عرض التفاصيل</a>
+            </div>
+          </div>
+
+          <!-- Event 3 -->
+          <div class="event-card">
+            <img
+              src="https://placehold.co/600x400/2ecc71/ffffff?text=فعالية+رياضية"
+              alt="فعالية رياضية"
+              class="event-image"
+            />
+            <div class="event-content">
+              <h3 class="event-title">سباق الدراجات الهوائية</h3>
+              <div class="event-date">
+                <i class="bi bi-calendar-event"></i> 25 أكتوبر 2024
+              </div>
+              <p class="event-description">
+                سباق للدراجات الهوائية يجوب أجمل المناطق الطبيعية في ريف دمشق.
+              </p>
+              <div class="event-location">
+                <i class="bi bi-geo-alt"></i> ريف دمشق، منطقة الزبداني
+              </div>
+              <a href="#" class="btn btn-primary">عرض التفاصيل</a>
+            </div>
+          </div>
+
+          <!-- Event 4 -->
+          <div class="event-card">
+            <img
+              src="https://placehold.co/600x400/f39c12/ffffff?text=سوق+غذائي"
+              alt="سوق غذائي"
+              class="event-image"
+            />
+            <div class="event-content">
+              <h3 class="event-title">سوق المنتجات الغذائية</h3>
+              <div class="event-date">
+                <i class="bi bi-calendar-event"></i> 5 نوفمبر 2024
+              </div>
+              <p class="event-description">
+                سوق يعرض أشهى المأكولات السورية التقليدية من مختلف المحافظات.
+              </p>
+              <div class="event-location">
+                <i class="bi bi-geo-alt"></i> حمص، الساحة الرئيسية
+              </div>
+              <a href="#" class="btn btn-primary">عرض التفاصيل</a>
+            </div>
+          </div>
+
+          <!-- Event 5 -->
+          <div class="event-card">
+            <img
+              src="https://placehold.co/600x400/9b59b6/ffffff?text=حفل+موسيقي"
+              alt="حفل موسيقي"
+              class="event-image"
+            />
+            <div class="event-content">
+              <h3 class="event-title">ليلة موسيقية في القلعة</h3>
+              <div class="event-date">
+                <i class="bi bi-calendar-event"></i> 15 نوفمبر 2024
+              </div>
+              <p class="event-description">
+                حفل موسيقي خاص في قلعة حلب يضم فرق موسيقية من مختلف أنحاء سوريا.
+              </p>
+              <div class="event-location">
+                <i class="bi bi-geo-alt"></i> حلب، قلعة حلب
+              </div>
+              <a href="#" class="btn btn-primary">عرض التفاصيل</a>
+            </div>
+          </div>
+
+          <!-- Event 6 -->
+          <div class="event-card">
+            <img
+              src="https://placehold.co/600x400/e67e22/ffffff?text=معرض+صور"
+              alt="معرض صور"
+              class="event-image"
+            />
+            <div class="event-content">
+              <h3 class="event-title">معرض صور "سوريا الجمال"</h3>
+              <div class="event-date">
+                <i class="bi bi-calendar-event"></i> 22 نوفمبر 2024
+              </div>
+              <p class="event-description">
+                معرض للصور الفوتوغرافية يعرض أجمل المناظر الطبيعية والأثرية في
+                سوريا.
+              </p>
+              <div class="event-location">
+                <i class="bi bi-geo-alt"></i> اللاذقية، المركز الثقافي
+              </div>
+              <a href="#" class="btn btn-primary">عرض التفاصيل</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Divider 3 -->
+      <div class="section-divider divider-3">
+        <div class="divider-wave"></div>
+      </div>
+
+      <!-- Why Choose Section -->
+      <section class="why-choose">
+        <h2 class="section-title">لماذا تختار فعاليات سوريا؟</h2>
+        <div class="features-grid">
+          <!-- Feature 1 -->
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="bi bi-calendar-check"></i>
+            </div>
+            <h3 class="feature-title">تقويم محدث</h3>
+            <p class="feature-description">
+              نقدم لك أحدث الفعاليات والأنشطة في جميع أنحاء سوريا بشكل مستمر
+              ومحدث.
+            </p>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="bi bi-geo-alt"></i>
+            </div>
+            <h3 class="feature-title">تغطية شاملة</h3>
+            <p class="feature-description">
+              فعاليات من جميع المحافظات السورية لتكون على اطلاع بكل ما يجري في
+              وطنك.
+            </p>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="bi bi-ticket-perforated"></i>
+            </div>
+            <h3 class="feature-title">حجز إلكتروني</h3>
+            <p class="feature-description">
+              إمكانية حجز التذاكر والتسجيل في الفعاليات إلكترونياً بسهولة وأمان.
+            </p>
+          </div>
+
+          <!-- Feature 4 -->
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="bi bi-people"></i>
+            </div>
+            <h3 class="feature-title">مجتمع نشط</h3>
+            <p class="feature-description">
+              انضم إلى مجتمع عشاق الفعاليات السورية وشارك تجاربك مع الآخرين.
+            </p>
+          </div>
+
+          <!-- Feature 5 -->
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="bi bi-bell"></i>
+            </div>
+            <h3 class="feature-title">إشعارات فورية</h3>
+            <p class="feature-description">
+              احصل على إشعارات فورية بأحدث الفعاليات والتحديثات المهمة.
+            </p>
+          </div>
+
+          <!-- Feature 6 -->
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="bi bi-star"></i>
+            </div>
+            <h3 class="feature-title">جودة مضمونة</h3>
+            <p class="feature-description">
+              جميع الفعاليات المدرجة تخضع لمعايير جودة لضمان أفضل تجربة لك.
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-wave"></div>
+      <div class="footer-container">
+        <div class="footer-grid">
+          <!-- About Column -->
+          <div class="footer-col">
+            <h3>فعاليات سوريا</h3>
+            <p>
+              منصة شاملة تهدف إلى تعزيز الثقافة والفنون والرياضة في جميع أنحاء
+              سوريا.
+            </p>
+            <div class="social-links">
+              <a href="#" class="social-link"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="social-link"><i class="bi bi-twitter"></i></a>
+              <a href="#" class="social-link"
+                ><i class="bi bi-instagram"></i
+              ></a>
+              <a href="#" class="social-link"><i class="bi bi-youtube"></i></a>
+            </div>
+          </div>
+
+          <!-- Quick Links Column -->
+          <div class="footer-col">
+            <h3>روابط سريعة</h3>
+            <ul class="footer-links">
+              <li>
+                <a href="#"
+                  ><i class="bi bi-chevron-left"></i> الصفحة الرئيسية</a
+                >
+              </li>
+              <li>
+                <a href="#"><i class="bi bi-chevron-left"></i> الفعاليات</a>
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="bi bi-chevron-left"></i> تفاصيل الفعالية</a
+                >
+              </li>
+              <li>
+                <a href="#"><i class="bi bi-chevron-left"></i> عن الدليل</a>
+              </li>
+              <li>
+                <a href="#"><i class="bi bi-chevron-left"></i> تواصل معنا</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Column -->
+          <div class="footer-col">
+            <h3>معلومات التواصل</h3>
+            <div class="contact-info">
+              <p><i class="bi bi-geo-alt"></i> دمشق، سوريا</p>
+              <p><i class="bi bi-telephone"></i> +963 11 123 4567</p>
+              <p><i class="bi bi-envelope"></i> info@syrian-events.com</p>
+              <p><i class="bi bi-clock"></i> الأحد - الخميس: 9:00 - 17:00</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            &copy; 2024 فعاليات سوريا. جميع الحقوق محفوظة. تم التحديث في: أكتوبر
+            2024
+          </p>
+        </div>
+      </div>
+    </footer>
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
@@ -373,6 +1431,112 @@
           navbar.classList.remove("scrolled");
           heroContent.classList.remove("scrolled");
         }
+
+        // Animate event cards when they come into view
+        const eventCards = document.querySelectorAll(".event-card");
+        const featureCards = document.querySelectorAll(".feature-card");
+
+        eventCards.forEach((card) => {
+          const cardTop = card.getBoundingClientRect().top;
+          if (cardTop < window.innerHeight - 100) {
+            card.classList.add("visible");
+          }
+        });
+
+        featureCards.forEach((card) => {
+          const cardTop = card.getBoundingClientRect().top;
+          if (cardTop < window.innerHeight - 100) {
+            card.classList.add("visible");
+          }
+        });
+      });
+
+      // Featured Events Slider
+      const sliderWrapper = document.getElementById("sliderWrapper");
+      const slides = document.querySelectorAll(".slide");
+      const navDots = document.querySelectorAll(".nav-dot");
+      const prevBtn = document.getElementById("prevBtn");
+      const nextBtn = document.getElementById("nextBtn");
+
+      let currentSlide = 0;
+      const totalSlides = slides.length;
+
+      function goToSlide(slideIndex) {
+        sliderWrapper.style.transform = `translateX(-${slideIndex * 100}%)`;
+        currentSlide = slideIndex;
+
+        // Update active dot
+        navDots.forEach((dot) => dot.classList.remove("active"));
+        navDots[slideIndex].classList.add("active");
+      }
+
+      // Event listeners for navigation
+      prevBtn.addEventListener("click", () => {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        goToSlide(currentSlide);
+      });
+
+      nextBtn.addEventListener("click", () => {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        goToSlide(currentSlide);
+      });
+
+      // Event listeners for dots
+      navDots.forEach((dot) => {
+        dot.addEventListener("click", () => {
+          const slideIndex = parseInt(dot.getAttribute("data-slide"));
+          goToSlide(slideIndex);
+        });
+      });
+
+      // Auto slide
+      let slideInterval = setInterval(() => {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        goToSlide(currentSlide);
+      }, 5000);
+
+      // Pause auto slide on hover
+      sliderWrapper.addEventListener("mouseenter", () => {
+        clearInterval(slideInterval);
+      });
+
+      sliderWrapper.addEventListener("mouseleave", () => {
+        slideInterval = setInterval(() => {
+          currentSlide = (currentSlide + 1) % totalSlides;
+          goToSlide(currentSlide);
+        }, 5000);
+      });
+
+      // Categories Filter
+      const categoryBtns = document.querySelectorAll(".category-btn");
+
+      categoryBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          // Remove active class from all buttons
+          categoryBtns.forEach((b) => b.classList.remove("active"));
+          // Add active class to clicked button
+          btn.classList.add("active");
+
+          const category = btn.getAttribute("data-category");
+          // Here you would normally filter events based on category
+          // For demo purposes, we'll just show an alert
+          console.log(`Filtering by category: ${category}`);
+        });
+      });
+
+      // Initialize animations on page load
+      document.addEventListener("DOMContentLoaded", () => {
+        // Trigger scroll event to animate cards that are initially in view
+        window.dispatchEvent(new Event("scroll"));
+
+        // Add animation to section titles
+        const sectionTitles = document.querySelectorAll(".section-title");
+        sectionTitles.forEach((title, index) => {
+          setTimeout(() => {
+            title.style.opacity = "1";
+            title.style.transform = "translateY(0)";
+          }, 300 * index);
+        });
       });
     </script>
   </body>
