@@ -104,6 +104,9 @@ document.addEventListener("DOMContentLoaded", function () {
   window.dispatchEvent(new Event("scroll"));
 });
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 // events.js - JavaScript for Events Page
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -307,7 +310,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Get elements
   const eventsGrid = document.getElementById("eventsGrid");
   const searchInput = document.getElementById("searchInput");
-  const dateFilter = document.getElementById("dateFilter");
+  const sortFilter = document.getElementById("sortFilter"); // Changed from dateFilter to sortFilter
   const categoryFilter = document.getElementById("categoryFilter");
   const locationFilter = document.getElementById("locationFilter");
   const pagination = document.getElementById("pagination");
@@ -320,7 +323,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function initPage() {
     // Set up event listeners
     searchInput.addEventListener("input", filterEvents);
-    dateFilter.addEventListener("change", filterEvents);
+    sortFilter.addEventListener("change", filterEvents); // Changed event listener
     categoryFilter.addEventListener("change", filterEvents);
     locationFilter.addEventListener("change", filterEvents);
 
@@ -334,15 +337,17 @@ document.addEventListener("DOMContentLoaded", function () {
     displayEvents();
   }
 
-  // Get filtered events
+  // Get filtered and sorted events
   function getFilteredEvents() {
     const searchTerm = searchInput.value.toLowerCase();
-    const dateValue = dateFilter.value;
+    const sortValue = sortFilter.value; // Get sort value (newest or oldest)
     const categoryValue = categoryFilter.value;
     const locationValue = locationFilter.value;
 
+    // First, filter events
     let filteredEvents = eventsData.filter((event) => {
-      // Search filter
+      // Search filter - البحث يعمل عن طريق مطابقة النص المدخل مع عنوان الفعالية
+      // يمكنك كتابة جزء من اسم الفعالية وسيتم عرض جميع الفعاليات التي تحتوي على هذا الجزء
       if (searchTerm && !event.title.toLowerCase().includes(searchTerm)) {
         return false;
       }
@@ -357,29 +362,21 @@ document.addEventListener("DOMContentLoaded", function () {
         return false;
       }
 
-      // Date filter
-      if (dateValue) {
-        const eventDate = new Date(event.date);
-        const today = new Date();
-        today.setHours(0, 0, 0, 0);
-
-        switch (dateValue) {
-          case "today":
-            return eventDate.toDateString() === today.toDateString();
-          case "week":
-            const weekFromNow = new Date(today);
-            weekFromNow.setDate(weekFromNow.getDate() + 7);
-            return eventDate >= today && eventDate <= weekFromNow;
-          case "month":
-            const monthFromNow = new Date(today);
-            monthFromNow.setMonth(monthFromNow.getMonth() + 1);
-            return eventDate >= today && eventDate <= monthFromNow;
-          case "upcoming":
-            return eventDate >= today;
-        }
-      }
-
       return true;
+    });
+
+    // Then, sort events
+    filteredEvents.sort((a, b) => {
+      const dateA = new Date(a.date);
+      const dateB = new Date(b.date);
+
+      if (sortValue === "newest") {
+        // الأحدث أولاً (تاريخ أحدث يعني رقم أكبر)
+        return dateB - dateA;
+      } else {
+        // الأقدم أولاً (تاريخ أقدم يعني رقم أصغر)
+        return dateA - dateB;
+      }
     });
 
     return filteredEvents;
