@@ -523,8 +523,10 @@ document.addEventListener("DOMContentLoaded", function () {
 // details.js - JavaScript for Event Details Page
 // event-details.js - JavaScript for Event Details Page
 
+// event-details.js - JavaScript for Event Details Page
+
 document.addEventListener("DOMContentLoaded", function () {
-  // Sample events data (same as events page)
+  // Sample events data (20 events)
   const eventsData = [
     {
       id: 1,
@@ -645,6 +647,280 @@ document.addEventListener("DOMContentLoaded", function () {
       startTime: "10:00",
       endTime: "17:00",
     },
+    {
+      id: 7,
+      title: "ورشة الرسم بالحبر",
+      description: "ورشة عمل لتعليم تقنيات الرسم بالحبر مع فنانين محترفين.",
+      date: "2024-10-18",
+      location: "حلب",
+      category: "art",
+      image: "https://placehold.co/600x400/9b59b6/ffffff?text=ورشة+فنية",
+      longDescription:
+        "ورشة الرسم بالحبر هي فرصة فريدة لتعلم تقنيات الرسم الحديثة باستخدام الحبر. تقام الورشة في مركز الفنون في حلب وتستمر لمدة ثلاثة أيام، ويشرف عليها فنانون محترفون من سوريا والعالم العربي. تشمل الورشة محاضرات نظرية وتطبيقات عملية، حيث يتعلم المشاركون أساسيات الرسم بالحبر، تقنيات التظليل، وأنواع الأقلام والورق المناسبة. يتميز البرنامج بتخصيص وقت كافٍ لكل مشارك لممارسة المهارات التي تعلمها تحت إشراف المدربين. في نهاية الورشة، يتم عرض أعمال المشاركين في معرض خاص.",
+      organizer: "مركز الفنون في حلب",
+      contact: "+963 21 890 1234",
+      email: "info@inkdrawingworkshop.com",
+      website: "www.inkdrawingworkshop.com",
+      address: "مركز الفنون, حلب",
+      ticketPrice: "3000 ل.س للشخص الواحد",
+      startTime: "14:00",
+      endTime: "18:00",
+    },
+    {
+      id: 8,
+      title: "سباق الدراجات الهوائية",
+      description:
+        "سباق للدراجات الهوائية يجوب أجمل المناطق الطبيعية في ريف دمشق.",
+      date: "2024-10-25",
+      location: "دمشق",
+      category: "sports",
+      image: "https://placehold.co/600x400/3498db/ffffff?text=فعالية+رياضية",
+      longDescription:
+        "سباق الدراجات الهوائية هو حدث رياضي ممتع يقام في ريف دمشق، ويستهدف عشاق رياضة الدراجات من جميع الأعمار. يمتد مسار السباق لمسافة 30 كم عبر أجمل المناطق الطبيعية في ريف دمشق، بما في ذلك الغابات والتلال والقرى التقليدية. يشمل السباق فئات مختلفة للمحترفين والهواة، مع جوائز قيمة للفائزين. يتميز الحدث بوجود محطات توقف على طول المسار توفر الماء والوجبات الخفيفة للدراجين، كما يتوفر فريق طبي كامل لضمان سلامة المشاركين. يقام السباق تحت إشراف الاتحاد السوري لرياضة الدراجات.",
+      organizer: "نادي الدراجات الهوائية في دمشق",
+      contact: "+963 11 901 2345",
+      email: "info@damascusbikerace.com",
+      website: "www.damascusbikerace.com",
+      address: "بداية السباق: قرية دمر, ريف دمشق",
+      ticketPrice: "1500 ل.س للشخص الواحد",
+      startTime: "08:00",
+      endTime: "13:00",
+    },
+    {
+      id: 9,
+      title: "سوق المنتجات الغذائية",
+      description:
+        "سوق يعرض أشهى المأكولات السورية التقليدية من مختلف المحافظات.",
+      date: "2024-11-05",
+      location: "حمص",
+      category: "handmade",
+      image: "https://placehold.co/600x400/2ecc71/ffffff?text=سوق+غذائي",
+      longDescription:
+        "سوق المنتجات الغذائية هو مهرجان سنوي يقام في مدينة حمص، ويهدف إلى تعريف الزوار بأفضل المنتجات الغذائية التقليدية من مختلف المحافظات السورية. يضم السوق أكثر من 60 عارضًا يقدمون منتجات متنوعة تشمل المخللات، المربيات، الحلويات، الأجبان، والزيوت الطبيعية. يتميز السوق بإقامة ورش عمل مباشرة لتعليم الزوار كيفية صنع بعض المنتجات الغذائية التقليدية، كما يشمل مسابقات تذوق للمنتجات المختلفة. يقام السوق في أجواء احتفالية مع عروض موسيقية وفقرات ترفيهية للعائلات.",
+      organizer: "جمعية الطهاة في حمص",
+      contact: "+963 31 012 3456",
+      email: "info@foodmarket-homs.com",
+      website: "www.foodmarket-homs.com",
+      address: "الساحة الرئيسية, حمص",
+      ticketPrice: "دخول مجاني",
+      startTime: "10:00",
+      endTime: "21:00",
+    },
+    {
+      id: 10,
+      title: "ليلة موسيقية في القلعة",
+      description:
+        "حفل موسيقي خاص في قلعة حلب يضم فرق موسيقية من مختلف أنحاء سوريا.",
+      date: "2024-11-15",
+      location: "حلب",
+      category: "music",
+      image: "https://placehold.co/600x400/f39c12/ffffff?text=حفل+موسيقي",
+      longDescription:
+        "ليلة موسيقية في القلعة هي حدث فني مميز يقام داخل قلعة حلب الأثرية، ويجمع بين الموسيقى والتراث في أجواء ساحرة لا تُنسى. يضم الحفل فرقًا موسيقية من مختلف أنحاء سوريا، تقدم مزيجًا من الموسيقى التراثية والحديثة. يتميز الحدث بإضاءة خاصة للقلعة تبرز جمالها المعماري، كما يشمل عروضًا للرقص الشعبي السوري. يقام الحفل في الهواء الطلق داخل باحة القلعة، مع توفير مقاعد مريحة للزوار. يعتبر هذا الحدث فرصة فريدة للاستمتاع بالموسيقى في واحدة من أجمل المواقع الأثرية في العالم.",
+      organizer: "مديرية الثقافة في حلب",
+      contact: "+963 21 123 4567",
+      email: "info@castleconcert-aleppo.com",
+      website: "www.castleconcert-aleppo.com",
+      address: "قلعة حلب, حلب",
+      ticketPrice: "2000 ل.س للشخص الواحد",
+      startTime: "19:30",
+      endTime: "23:00",
+    },
+    {
+      id: 11,
+      title: "معرض صور سوريا الجمال",
+      description:
+        "معرض للصور الفوتوغرافية يعرض أجمل المناظر الطبيعية والأثرية في سوريا.",
+      date: "2024-11-22",
+      location: "اللاذقية",
+      category: "art",
+      image: "https://placehold.co/600x400/9b59b6/ffffff?text=معرض+صور",
+      longDescription:
+        "معرض صور سوريا الجمال هو تظاهرة فنية تهدف إلى إبراز جمال سوريا من خلال عدسة المصورين السوريين. يضم المعرض أكثر من 150 صورة فوتوغرافية التقطت في مختلف أنحاء سوريا، من الجبال إلى السهول، ومن السواحل إلى الصحاري، ومن المواقع الأثرية إلى المدن الحديثة. يشارك في المعرض نخبة من المصورين المحترفين والهواة من جميع المحافظات السورية. يتميز المعرض بإقامة ورش عمل في التصوير الفوتوغرافي يقدمها مصورون محترفون، كما يشمل مسابقة لأفضل صورة يتم اختيارها من قبل لجنة تحكيم متخصصة.",
+      organizer: "نادي التصوير الفوتوغرافي في اللاذقية",
+      contact: "+963 41 234 5678",
+      email: "info@syriabeautyphotography.com",
+      website: "www.syriabeautyphotography.com",
+      address: "المتحف الوطني, اللاذقية",
+      ticketPrice: "500 ل.س للشخص الواحد",
+      startTime: "09:00",
+      endTime: "19:00",
+    },
+    {
+      id: 12,
+      title: "ورشة صناعة الفخار",
+      description: "تعلم تقنيات صناعة الفخار التقليدي من الحرفيين المحليين.",
+      date: "2024-11-30",
+      location: "دمشق",
+      category: "handmade",
+      image: "https://placehold.co/600x400/2ecc71/ffffff?text=ورشة+فخار",
+      longDescription:
+        "ورشة صناعة الفخار هي فرصة فريدة لتعلم هذه الحرفة التقليدية العريقة من أيدي خبراء سوريين. تقام الورشة في حي الفخار في دمشق، وتستمر لمدة يومين، حيث يتعلم المشاركون أساسيات صناعة الفخار من تحضير الطين إلى التشكيل والحرق والتزجيج. يتميز البرنامج بتقسيم المشاركين إلى مجموعات صغيرة لضمان حصول كل مشارك على الاهتمام الكافي من المدربين. في نهاية الورشة، يحصل كل مشارك على القطعة التي صنعها كتذكار. تهدف الورشة إلى الحفاظ على هذه الحرفة التقليدية ونقلها للأجيال الجديدة.",
+      organizer: "جمعية الحرف اليدوية في دمشق",
+      contact: "+963 11 345 6789",
+      email: "info@potteryworkshop-damascus.com",
+      website: "www.potteryworkshop-damascus.com",
+      address: "حي الفخار, دمشق",
+      ticketPrice: "2500 ل.س للشخص الواحد",
+      startTime: "10:00",
+      endTime: "16:00",
+    },
+    {
+      id: 13,
+      title: "بطولة كرة القدم المحلية",
+      description: "منافسات كرة القدم بين فرق المحافظات المختلفة.",
+      date: "2024-12-05",
+      location: "حلب",
+      category: "sports",
+      image: "https://placehold.co/600x400/3498db/ffffff?text=كرة+قدم",
+      longDescription:
+        "بطولة كرة القدم المحلية هي حدث رياضي كبير يجمع بين فرق كرة القدم من مختلف المحافظات السورية. تقام البطولة على مدار أسبوع كامل في ملعب حلب الدولي، وتضم 16 فريقًا يتنافسون على كأس البطولة. تتميز البطولة بنظام خروج المغلوب، مع إقامة مباراتين يوميًا في أجواء احتفالية حماسية. يحضر البطولة آلاف المشجعين من جميع أنحاء سوريا، مما يخلق جوًا من الحماس والتنافس الشريف. تشمل البطولة أيضًا فعاليات جانبية مثل معرض المنتجات الرياضية وورش عمل تدريبية للأطفال.",
+      organizer: "الاتحاد السوري لكرة القدم",
+      contact: "+963 21 456 7890",
+      email: "info@localsoccerchampionship.com",
+      website: "www.localsoccerchampionship.com",
+      address: "ملعب حلب الدولي, حلب",
+      ticketPrice: "1000 ل.س للشخص الواحد",
+      startTime: "15:00",
+      endTime: "22:00",
+    },
+    {
+      id: 14,
+      title: "حفل أمسيات شعرية",
+      description:
+        "أمسية شعرية تجمع نخبة من شعراء سوريا لتقديم قصائد وطنية وإنسانية.",
+      date: "2024-12-12",
+      location: "اللاذقية",
+      category: "cultural",
+      image: "https://placehold.co/600x400/e74c3c/ffffff?text=أمسية+شعرية",
+      longDescription:
+        "حفل أمسيات شعرية هو تظاهرة ثقافية تقام في المسرح الروماني في اللاذقية، وتجمع بين نخبة من شعراء سوريا البارزين. يمتد الحفل على مدار ثلاثة أيام، حيث يقدم كل شاعر قصائده في جو من الأناقة والرقي. تشمل الأمسيات الشعرية قصائد في الحب، الوطن، الطبيعة، والقضايا الإنسانية، مع مراعاة التنوع في الأساليب الشعرية من العمودي إلى التفعيلة إلى النثر. يتميز الحدث بإقامة جلسات نقاشية بين الشعراء والجمهور، كما يشمل معرضًا للكتب الشعرية. يعتبر هذا الحدث فرصة فريدة لعشاق الشعر للاستمتاع بأجمل القصائد في واحدة من أجمل المواقع الأثرية في سوريا.",
+      organizer: "اتحاد الكتاب العرب في اللاذقية",
+      contact: "+963 41 567 8901",
+      email: "info@poetryevenings-latakia.com",
+      website: "www.poetryevenings-latakia.com",
+      address: "المسرح الروماني, اللاذقية",
+      ticketPrice: "800 ل.س للشخص الواحد",
+      startTime: "18:00",
+      endTime: "22:00",
+    },
+    {
+      id: 15,
+      title: "مهرجان الرقص الشعبي",
+      description: "عروض للرقص الشعبي السوري من مختلف المناطق والمحافظات.",
+      date: "2024-12-18",
+      location: "طرطوس",
+      category: "music",
+      image: "https://placehold.co/600x400/f39c12/ffffff?text=رقص+شعبي",
+      longDescription:
+        "مهرجان الرقص الشعبي هو تظاهرة فنية تهدف إلى إبراز تنوع التراث الرقصي السوري من مختلف المناطق والمحافظات. يقام المهرجان على مدار يومين في المسرح المكشوف في طرطوس، ويضم فرقًا فلكلورية من جميع أنحاء سوريا. تقدم كل فرقة عروضها الخاصة التي تعكس تراث منطقتها، من الدبكة الشمالية إلى الرقصات الشرقية والجنوبية. يتميز المهرجان بإقامة ورش عمل لتعليم أساسيات الرقص الشعبي السوري، كما يشمل مسابقة لأفضل فرقة فلكلورية. يقام المهرجان في أجواء احتفالية مع إضاءة خاصة وديكورات تقليدية تضفي جوًا من البهجة والفرح.",
+      organizer: "مديرية الثقافة في طرطوس",
+      contact: "+963 43 678 9012",
+      email: "info@folkloredancefestival-tartus.com",
+      website: "www.folkloredancefestival-tartus.com",
+      address: "المسرح المكشوف, طرطوس",
+      ticketPrice: "1200 ل.س للشخص الواحد",
+      startTime: "17:00",
+      endTime: "23:00",
+    },
+    {
+      id: 16,
+      title: "معرض الخط العربي",
+      description: "معرض يضم أجمل أعمال الخط العربي من فنانين سوريين معاصرين.",
+      date: "2024-12-22",
+      location: "دمشق",
+      category: "art",
+      image: "https://placehold.co/600x400/9b59b6/ffffff?text=خط+عربي",
+      longDescription:
+        "معرض الخط العربي هو تظاهرة فنية تهدف إلى إبراز جمال فن الخط العربي من خلال أعمال فنانين سوريين معاصرين. يضم المعرض أكثر من 100 لوحة خطية تتنوع بين أنواع الخطوط العربية المختلفة من الكوفي إلى النسخ إلى الثلث إلى الديواني. يشارك في المعرض نخبة من خطاطي سوريا البارزين، كما يشمل أعمالًا لفنانين شباب واعد. يتميز المعرض بإقامة ورش عمل مباشرة في فن الخط العربي يقدمها خطاطون محترفون، حيث يمكن للزوار تعلم أساسيات الخط العربي وتجربة الكتابة بأنفسهم. يعتبر هذا المعرض فرصة فريدة لعشاق الفن الإسلامي للاستمتاع بأجمل الأعمال الخطية في قلب دمشق.",
+      organizer: "جمعية الخطاطين في سوريا",
+      contact: "+963 11 789 0123",
+      email: "info@arabiccalligraphyexhibition.com",
+      website: "www.arabiccalligraphyexhibition.com",
+      address: "دار الأسد للثقافة والفنون, دمشق",
+      ticketPrice: "600 ل.س للشخص الواحد",
+      startTime: "09:00",
+      endTime: "19:00",
+    },
+    {
+      id: 17,
+      title: "سوق التراث",
+      description:
+        "سوق يعرض المنتجات التراثية والتقليدية من مختلف المحافظات السورية.",
+      date: "2024-12-28",
+      location: "حمص",
+      category: "handmade",
+      image: "https://placehold.co/600x400/2ecc71/ffffff?text=سوق+تراثي",
+      longDescription:
+        "سوق التراث هو مهرجان سنوي يقام في مدينة حمص، ويهدف إلى إحياء التراث السوري من خلال عرض المنتجات التقليدية من مختلف المحافظات. يضم السوق أكثر من 80 عارضًا يقدمون منتجات متنوعة تشمل الملابس التراثية، الأدوات المنزلية التقليدية، الألعاب الشعبية، والحرف اليدوية. يتميز السوق بإقامة عروض حية للحرف التقليدية مثل النسيج على المنسج اليدوي، التطريز، وصناعة النحاسيات. كما يشمل السوق فقرات ترفيهية للعائلات مثل عروض الدمى والحكواتي. يقام السوق في أجواء احتفالية مع موسيقى تراثية وأكلات شعبية.",
+      organizer: "جمعية التراث السوري في حمص",
+      contact: "+963 31 890 1234",
+      email: "info@heritagemarket-homs.com",
+      website: "www.heritagemarket-homs.com",
+      address: "ساحة العاصي, حمص",
+      ticketPrice: "دخول مجاني",
+      startTime: "10:00",
+      endTime: "22:00",
+    },
+    {
+      id: 18,
+      title: "بطولة الشطرنج الوطنية",
+      description: "منافسات الشطرنج بين أفضل اللاعبين في سوريا.",
+      date: "2025-01-05",
+      location: "حلب",
+      category: "sports",
+      image: "https://placehold.co/600x400/3498db/ffffff?text=شطرنج",
+      longDescription:
+        "بطولة الشطرنج الوطنية هي حدث رياضي ذهني يجمع بين أفضل لاعبي الشطرنج في سوريا من مختلف الأعمار. تقام البطولة على مدار خمسة أيام في فندق بارون في حلب، وتضم 64 لاعبًا يتنافسون في نظام خروج المغلوب. تتميز البطولة بوجود حكام دوليين وإشراف الاتحاد السوري للشطرنج، مع توفير بث حي للمباريات على الإنترنت. يشمل البرنامج فعاليات جانبية مثل محاضرات في استراتيجيات الشطرنج وورش عمل لتعليم أساسيات اللعبة للأطفال. تعتبر البطولة فرصة لعشاق الشطرنج لمشاهدة أفضل اللاعبين في سوريا وهم يتنافسون في أجواء احترافية.",
+      organizer: "الاتحاد السوري للشطرنج",
+      contact: "+963 21 901 2345",
+      email: "info@nationschesschampionship.com",
+      website: "www.nationschesschampionship.com",
+      address: "فندق بارون, حلب",
+      ticketPrice: "700 ل.س للشخص الواحد",
+      startTime: "10:00",
+      endTime: "18:00",
+    },
+    {
+      id: 19,
+      title: "حفل موسيقى كلاسيكية",
+      description:
+        "أداء لأشهر المقطوعات الموسيقية الكلاسيكية من قبل أوركسترا سورية.",
+      date: "2025-01-12",
+      location: "دمشق",
+      category: "music",
+      image: "https://placehold.co/600x400/f39c12/ffffff?text=موسيقى+كلاسيكية",
+      longDescription:
+        "حفل موسيقى كلاسيكية هو تظاهرة فنية راقية تقام في دار الأوبرا في دمشق، وتقدمها الأوركسترا السيمفونية السورية. يضم الحفل أداءً لأشهر المقطوعات الموسيقية الكلاسيكية لمؤلفين عالميين مثل بيتهوفن، موزارت، وتشايكوفسكي، بالإضافة إلى مقطوعات لمؤلفين سوريين. يتميز الحفل بمشاركة فنانين ضيوف من أوروبا، مما يضفي طابعًا دوليًا على الحدث. يقام الحفل في قاعة الأوبرا الفاخرة بدمشق، مع إضاءة خاصة وديكورات أنيقة تضفي جوًا من الرقي والفخامة. يعتبر هذا الحدث فرصة فريدة لعشاق الموسيقى الكلاسيكية للاستمتاع بأجمل المقطوعات في واحدة من أجمل قاعات الأوبرا في المنطقة.",
+      organizer: "الأوركسترا السيمفونية السورية",
+      contact: "+963 11 012 3456",
+      email: "info@classicalmusicconcert-damascus.com",
+      website: "www.classicalmusicconcert-damascus.com",
+      address: "دار الأوبرا, دمشق",
+      ticketPrice: "2500 ل.س للشخص الواحد",
+      startTime: "20:00",
+      endTime: "23:00",
+    },
+    {
+      id: 20,
+      title: "معرض السجاد اليدوي",
+      description:
+        "عرض لأجمل أنواع السجاد السوري المصنوع يدوياً بتصاميم تقليدية وحديثة.",
+      date: "2025-01-20",
+      location: "الحسكة",
+      category: "handmade",
+      image: "https://placehold.co/600x400/2ecc71/ffffff?text=سجاد+يدوي",
+      longDescription:
+        "معرض السجاد اليدوي هو تظاهرة فنية وحرفية تقام في مدينة الحسكة، وتهدف إلى إبراز جمال السجاد السوري المصنوع يدويًا. يضم المعرض أكثر من 200 قطعة سجاد من مختلف مناطق سوريا، من السجاد الحلبي المعروف بألوانه الزاهية إلى السجاد الدمشقي بأناقته وفخامته. يشارك في المعرض نخبة من الحرفيين السوريين الذين يعرضون تقنيات صناعة السجاد اليدوي أمام الزوار. يتميز المعرض بإقامة ورش عمل لتعليم أساسيات صناعة السجاد، كما يشمل مسابقة لأجمل قطعة سجاد يتم اختيارها من قبل لجنة تحكيم متخصصة. يعتبر هذا المعرض فرصة فريدة لعشاق الفنون التراثية لاقتناء قطع فريدة من السجاد السوري الأصيل.",
+      organizer: "جمعية صناع السجاد في الحسكة",
+      contact: "+963 53 123 4567",
+      email: "info@handmadecarpetexhibition-hasakah.com",
+      website: "www.handmadecarpetexhibition-hasakah.com",
+      address: "مركز المعارض, الحسكة",
+      ticketPrice: "دخول مجاني",
+      startTime: "09:00",
+      endTime: "20:00",
+    },
   ];
 
   // Get elements
@@ -653,11 +929,15 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("eventDetailModal")
   );
   const eventDetailContent = document.getElementById("eventDetailContent");
+  const relatedEventsGrid = document.getElementById("relatedEventsGrid");
 
   // Initialize the page
   function initPage() {
     // Display events list
     displayEventsList();
+
+    // Display default related events (first 4 events)
+    displayDefaultRelatedEvents();
   }
 
   // Display events list
@@ -667,19 +947,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Display events
     eventsData.forEach((event) => {
-      const eventCard = createEventCard(event);
-      const col = document.createElement("div");
-      col.className = "col-md-6 col-lg-4 mb-4";
-      col.appendChild(eventCard);
-      eventsList.appendChild(col);
+      const eventItem = createEventListItem(event);
+      eventsList.appendChild(eventItem);
     });
   }
 
-  // Create event card element
-  function createEventCard(event) {
-    const card = document.createElement("div");
-    card.className = "event-item-card";
-    card.setAttribute("data-event-id", event.id);
+  // Display default related events
+  function displayDefaultRelatedEvents() {
+    if (!relatedEventsGrid) return;
+
+    // Clear related events grid
+    relatedEventsGrid.innerHTML = "";
+
+    // Get first 4 events as default related events
+    const defaultRelatedEvents = eventsData.slice(0, 4);
+
+    // Display related events
+    defaultRelatedEvents.forEach((event) => {
+      const relatedEventCard = createRelatedEventCard(event);
+      relatedEventsGrid.appendChild(relatedEventCard);
+    });
+  }
+
+  // Create event list item element
+  function createEventListItem(event) {
+    const listItem = document.createElement("div");
+    listItem.className = "event-list-item";
+    listItem.setAttribute("data-event-id", event.id);
 
     // Format date
     const eventDate = new Date(event.date);
@@ -693,33 +987,31 @@ document.addEventListener("DOMContentLoaded", function () {
     const categoryArabic = getCategoryArabic(event.category);
     const categoryClass = `tag-${event.category}`;
 
-    card.innerHTML = `
-            <img src="${event.image}" alt="${event.title}" class="event-item-image">
-            <div class="event-item-content">
-                <h3 class="event-item-title">${event.title}</h3>
-                <div class="event-item-date"><i class="bi bi-calendar-event"></i> ${formattedDate}</div>
-                <div class="event-item-location"><i class="bi bi-geo-alt"></i> ${event.location}</div>
-                <p class="event-item-description">${event.description}</p>
-                <span class="event-item-tag ${categoryClass}">${categoryArabic}</span>
-                <button class="event-item-btn view-details-btn" data-event-id="${event.id}">عرض التفاصيل</button>
+    listItem.innerHTML = `
+            <div class="event-list-item-content">
+                <img src="${event.image}" alt="${event.title}" class="event-list-item-image">
+                <div class="event-list-item-info">
+                    <h3 class="event-list-item-title">${event.title}</h3>
+                    <div class="event-list-item-meta">
+                        <div class="event-list-item-date"><i class="bi bi-calendar-event"></i> ${formattedDate}</div>
+                        <div class="event-list-item-location"><i class="bi bi-geo-alt"></i> ${event.location}</div>
+                        <div class="event-list-item-category ${categoryClass}">${categoryArabic}</div>
+                    </div>
+                    <p class="event-list-item-description">${event.description}</p>
+                </div>
+                <div class="event-list-item-arrow">
+                    <i class="bi bi-arrow-left"></i>
+                </div>
             </div>
         `;
 
-    // Add click event to card
-    card.addEventListener("click", function () {
+    // Add click event to list item
+    listItem.addEventListener("click", function () {
       const eventId = this.getAttribute("data-event-id");
       showEventDetails(eventId);
     });
 
-    // Add click event to button (prevent event bubbling)
-    const viewDetailsBtn = card.querySelector(".view-details-btn");
-    viewDetailsBtn.addEventListener("click", function (e) {
-      e.stopPropagation();
-      const eventId = this.getAttribute("data-event-id");
-      showEventDetails(eventId);
-    });
-
-    return card;
+    return listItem;
   }
 
   // Show event details in modal
@@ -813,6 +1105,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // Set event details content
     eventDetailContent.innerHTML = eventDetailsHTML;
 
+    // Show related events
+    showRelatedEvents(eventId);
+
     // Show modal
     eventDetailModal.show();
 
@@ -833,6 +1128,105 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
     }
+  }
+
+  // Show related events based on current event
+  function showRelatedEvents(currentEventId) {
+    const currentEvent = eventsData.find((e) => e.id == currentEventId);
+    if (!currentEvent) return;
+
+    const relatedEventsGrid = document.getElementById("relatedEventsGrid");
+    if (!relatedEventsGrid) return;
+
+    // Clear related events grid
+    relatedEventsGrid.innerHTML = "";
+
+    // Get related events (same category, different location, or same location, different category)
+    let relatedEvents = eventsData.filter((event) => {
+      return (
+        event.id != currentEventId &&
+        (event.category === currentEvent.category ||
+          event.location === currentEvent.location)
+      );
+    });
+
+    // If we don't have enough related events, add some random ones
+    if (relatedEvents.length < 4) {
+      const remainingEvents = eventsData.filter(
+        (event) =>
+          event.id != currentEventId &&
+          !relatedEvents.some((re) => re.id === event.id)
+      );
+
+      // Shuffle remaining events
+      for (let i = remainingEvents.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [remainingEvents[i], remainingEvents[j]] = [
+          remainingEvents[j],
+          remainingEvents[i],
+        ];
+      }
+
+      // Add up to 4 more events
+      const needed = 4 - relatedEvents.length;
+      relatedEvents = relatedEvents.concat(remainingEvents.slice(0, needed));
+    }
+
+    // Limit to 4 events
+    relatedEvents = relatedEvents.slice(0, 4);
+
+    // Display related events
+    relatedEvents.forEach((event) => {
+      const relatedEventCard = createRelatedEventCard(event);
+      relatedEventsGrid.appendChild(relatedEventCard);
+    });
+  }
+
+  // Create related event card element
+  function createRelatedEventCard(event) {
+    const card = document.createElement("div");
+    card.className = "related-event-card";
+    card.setAttribute("data-event-id", event.id);
+
+    // Format date
+    const eventDate = new Date(event.date);
+    const formattedDate = `${eventDate.toLocaleDateString("ar-EG", {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    })}`;
+
+    // Get category Arabic name
+    const categoryArabic = getCategoryArabic(event.category);
+    const categoryClass = `tag-${event.category}`;
+
+    card.innerHTML = `
+            <img src="${event.image}" alt="${event.title}" class="related-event-image">
+            <span class="related-event-tag ${categoryClass}">${categoryArabic}</span>
+            <div class="related-event-content">
+                <h3 class="related-event-title">${event.title}</h3>
+                <div class="related-event-date"><i class="bi bi-calendar-event"></i> ${formattedDate}</div>
+                <div class="related-event-location"><i class="bi bi-geo-alt"></i> ${event.location}</div>
+                <p class="related-event-description">${event.description}</p>
+                <button class="related-event-btn view-related-details-btn" data-event-id="${event.id}">عرض التفاصيل</button>
+            </div>
+        `;
+
+    // Add click event to card
+    card.addEventListener("click", function () {
+      const eventId = this.getAttribute("data-event-id");
+      showEventDetails(eventId);
+    });
+
+    // Add click event to button (prevent event bubbling)
+    const viewDetailsBtn = card.querySelector(".view-related-details-btn");
+    viewDetailsBtn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      const eventId = this.getAttribute("data-event-id");
+      showEventDetails(eventId);
+    });
+
+    return card;
   }
 
   // Get Arabic category name

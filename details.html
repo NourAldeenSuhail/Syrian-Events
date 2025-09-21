@@ -86,7 +86,7 @@
             </div>
             <h1 class="events-header-title">تفاصيل الفعاليات</h1>
             <p class="events-header-subtitle">
-              اختر الفعالية التي ترغب في معرفة المزيد عنها
+              اختر الفعالية التي ترغب في معرفة المزيد عنها من القائمة أدناه
             </p>
           </div>
         </div>
@@ -102,8 +102,14 @@
       <!-- Events List Section -->
       <section class="events-list-section">
         <div class="container">
-          <div class="row" id="eventsList">
-            <!-- Event items will be generated here by JavaScript -->
+          <div class="events-list-container">
+            <div class="events-list-header">
+              <h2>قائمة الفعاليات</h2>
+              <p>اختر فعالية لعرض تفاصيلها الكاملة</p>
+            </div>
+            <div class="events-list" id="eventsList">
+              <!-- Event items will be generated here by JavaScript -->
+            </div>
           </div>
         </div>
       </section>
@@ -144,6 +150,28 @@
           </div>
         </div>
       </div>
+
+      <!-- Related Events Section -->
+      <!-- Related Events Section - Static HTML fallback -->
+      <section class="related-events-section">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">فعاليات ذات صلة</h2>
+            <p class="section-subtitle">
+              اكتشف فعاليات أخرى قد تهمك بناءً على اهتماماتك
+            </p>
+          </div>
+          <div class="related-events-grid" id="relatedEventsGrid">
+            <!-- Fallback content in case JavaScript fails -->
+            <div class="text-center py-5">
+              <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">جارٍ التحميل...</span>
+              </div>
+              <p class="mt-3">جاري تحميل الفعاليات ذات الصلة...</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- Footer -->
