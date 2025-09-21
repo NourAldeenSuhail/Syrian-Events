@@ -516,3 +516,337 @@ document.addEventListener("DOMContentLoaded", function () {
   // Initialize the page
   initPage();
 });
+
+/////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// details.js - JavaScript for Event Details Page
+// event-details.js - JavaScript for Event Details Page
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Sample events data (same as events page)
+  const eventsData = [
+    {
+      id: 1,
+      title: "مهرجان دمشق الثقافي",
+      description:
+        "تجربة ثقافية فريدة تجمع بين التراث والحداثة في قلب العاصمة دمشق.",
+      date: "2024-10-15",
+      location: "دمشق",
+      category: "cultural",
+      image:
+        "https://placehold.co/600x400/e74c3c/ffffff?text=مهرجان+دمشق+الثقافي",
+      longDescription:
+        "مهرجان دمشق الثقافي هو حدث سنوي يقام في قلب العاصمة السورية دمشق، ويهدف إلى إحياء التراث الثقافي السوري وإبرازه للعالم. يضم المهرجان مجموعة متنوعة من الفعاليات التي تشمل العروض الموسيقية والمسرحية، المعارض الفنية، ورش العمل الحرفية، والأمسيات الشعرية. يشارك في المهرجان فنانون وحرفيون من جميع أنحاء سوريا، مما يخلق تجربة ثقافية غنية ومتنوعة للزوار. يتميز المهرجان بإقامة فعالياته في مواقع تاريخية وأثرية في دمشق، مما يضيف بعداً تاريخياً وجمالياً خاصاً للفعاليات.",
+      organizer: "وزارة الثقافة السورية",
+      contact: "+963 11 234 5678",
+      email: "info@damascusculturalfestival.com",
+      website: "www.damascusculturalfestival.com",
+      address: "شارعStraight, دمشق القديمة, دمشق",
+      ticketPrice: "1000 ل.س للشخص الواحد",
+      startTime: "17:00",
+      endTime: "23:00",
+    },
+    {
+      id: 2,
+      title: "معرض حلب للفنون",
+      description:
+        "استعراض لأعمال الفنانين السوريين المتميزين في قلب مدينة حلب.",
+      date: "2024-11-05",
+      location: "حلب",
+      category: "art",
+      image: "https://placehold.co/600x400/9b59b6/ffffff?text=معرض+حلب+الفنون",
+      longDescription:
+        "معرض حلب للفنون هو تظاهرة فنية سنوية تقام في مدينة حلب، وتجمع بين الفنانين التشكيليين والنحاتين والفنانين الرقميين من مختلف أنحاء سوريا. يهدف المعرض إلى دعم الحركة الفنية في سوريا وإتاحة الفرصة للفنانين الشباب لعرض أعمالهم أمام الجمهور. يضم المعرض أكثر من 200 عمل فني متنوع بين اللوحات الزيتية، المنحوتات، الأعمال الرقمية، والصور الفوتوغرافية. يتميز المعرض بإقامة ورش عمل فنية يومية يشارك فيها الزوار في إنشاء أعمال فنية تحت إشراف فنانين محترفين.",
+      organizer: "نقابة الفنانين التشكيليين في حلب",
+      contact: "+963 21 345 6789",
+      email: "info@aleppoartexhibition.com",
+      website: "www.aleppoartexhibition.com",
+      address: "شارع القصر البلدي, حلب",
+      ticketPrice: "500 ل.س للشخص الواحد",
+      startTime: "10:00",
+      endTime: "20:00",
+    },
+    {
+      id: 3,
+      title: "سوق حمص للمنتجات اليدوية",
+      description: "دعم الحرفيين المحليين واكتشاف المنتجات التقليدية الفريدة.",
+      date: "2024-11-25",
+      location: "حمص",
+      category: "handmade",
+      image: "https://placehold.co/600x400/2ecc71/ffffff?text=سوق+حمص+اليدوية",
+      longDescription:
+        "سوق حمص للمنتجات اليدوية هو سوق أسبوعي يقام في ساحة العاصي في مدينة حمص، ويهدف إلى دعم الحرفيين المحليين وتشجيع السياحة المحلية. يضم السوق أكثر من 50 حرفيًا يعرضون منتجاتهم اليدوية المتنوعة التي تشمل السجاد اليدوي، الفخار، النحاسيات، التطريز، والمنتجات الجلدية. يتميز السوق بإقامة ورش عمل مباشرة يشرح فيها الحرفيون تقنيات صناعتهم ويدربون الزوار على أساسيات هذه الحرف. كما يضم السوق زاوية خاصة للأطفال لتعليمهم الحرف اليدوية بطريقة مبسطة وممتعة.",
+      organizer: "جمعية الحرفيين في حمص",
+      contact: "+963 31 456 7890",
+      email: "info@homscraftmarket.com",
+      website: "www.homscraftmarket.com",
+      address: "ساحة العاصي, حمص",
+      ticketPrice: "دخول مجاني",
+      startTime: "09:00",
+      endTime: "19:00",
+    },
+    {
+      id: 4,
+      title: "ماراثون طرطوس الدولي",
+      description: "فعالية رياضية تجوب أجمل شوارع طرطوس على ساحل المتوسط.",
+      date: "2024-12-20",
+      location: "طرطوس",
+      category: "sports",
+      image: "https://placehold.co/600x400/3498db/ffffff?text=ماراثون+طرطوس",
+      longDescription:
+        "ماراثون طرطوس الدولي هو حدث رياضي سنوي يجذب المشاركين من مختلف أنحاء العالم. يقام الماراثون على كورنيش طرطوس المطل على البحر المتوسط، ويقدم مسارًا خلابًا يمر بأهم المعالم السياحية في المدينة. يضم الماراثون عدة فئات تنافسية تشمل الماراثون الكامل (42.195 كم)، نصف الماراثون (21.1 كم)، والماراثون المصغر (5 كم) المخصص للعائلات والأطفال. يتميز الماراثون بتنظيمه الاحترافي وتقديم جوائز قيمة للفائزين، كما يشمل فعاليات جانبية مثل معرض المنتجات الرياضية وورش العمل التدريبية.",
+      organizer: "الاتحاد السوري لألعاب القوى",
+      contact: "+963 43 567 8901",
+      email: "info@tartusmarathon.com",
+      website: "www.tartusmarathon.com",
+      address: "كورنيش طرطوس, طرطوس",
+      ticketPrice: "2000 ل.س للتسجيل",
+      startTime: "07:00",
+      endTime: "14:00",
+    },
+    {
+      id: 5,
+      title: "مهرجان اللاذقية الموسيقي",
+      description: "أمسية موسيقية تجمع نخبة من عازفي سوريا على مسرح البحر.",
+      date: "2024-12-10",
+      location: "اللاذقية",
+      category: "music",
+      image:
+        "https://placehold.co/600x400/f39c12/ffffff?text=مهرجان+اللاذقية+الموسيقي",
+      longDescription:
+        "مهرجان اللاذقية الموسيقي هو تظاهرة فنية موسيقية تقام سنويًا على مسرح البحر في مدينة اللاذقية. يضم المهرجان فرقًا موسيقية من مختلف أنحاء سوريا، ويشمل أنواعًا متنوعة من الموسيقى من التراثية إلى الحديثة. يتميز المهرجان بإقامة حفلات يومية على مدار أسبوع كامل، كل حفلة تقدم نوعًا موسيقيًا مختلفًا. كما يشمل المهرجان ورش عمل موسيقية لتعليم العزف على الآلات الموسيقية التقليدية، ومعارض للأدوات الموسيقية. يقام المهرجان في أجواء ساحرة على شاطئ البحر، مما يخلق تجربة فريدة للزوار.",
+      organizer: "مديرية الثقافة في اللاذقية",
+      contact: "+963 41 678 9012",
+      email: "info@latakiamusicfestival.com",
+      website: "www.latakiamusicfestival.com",
+      address: "مسرح البحر, الكورنيش الجنوبي, اللاذقية",
+      ticketPrice: "1500 ل.س للشخص الواحد",
+      startTime: "19:00",
+      endTime: "23:30",
+    },
+    {
+      id: 6,
+      title: "ندوة حول التراث السوري",
+      description:
+        "ندوة تناقش أهمية الحفاظ على التراث السوري وسبل تطويره في العصر الحديث.",
+      date: "2024-10-12",
+      location: "دمشق",
+      category: "cultural",
+      image: "https://placehold.co/600x400/e74c3c/ffffff?text=ندوة+ثقافية",
+      longDescription:
+        "ندوة حول التراث السوري هي فعالية فكرية تهدف إلى مناقشة قضايا التراث السوري وسبل الحفاظ عليه وتطويره في العصر الحديث. تضم الندوة نخبة من الباحثين والخبراء في مجالات التراث المادي وغير المادي، والذين يقدمون أوراقًا بحثية حول مواضيع متنوعة تشمل العمارة التراثية، الحرف اليدوية، الموسيقى والفنون التقليدية، والتراث الغذائي. تتميز الندوة بإقامة جلسات حوارية مفتوحة مع الجمهور، وورش عمل تطبيقية لتعليم تقنيات الحفاظ على التراث. كما تشمل الندوة معرضًا للصور والوثائق التراثية النادرة.",
+      organizer: "مركز الدراسات التراثية في سوريا",
+      contact: "+963 11 789 0123",
+      email: "info@syrianheritagesymposium.com",
+      website: "www.syrianheritagesymposium.com",
+      address: "مركز المؤتمرات, دمشق",
+      ticketPrice: "750 ل.س للشخص الواحد",
+      startTime: "10:00",
+      endTime: "17:00",
+    },
+  ];
+
+  // Get elements
+  const eventsList = document.getElementById("eventsList");
+  const eventDetailModal = new bootstrap.Modal(
+    document.getElementById("eventDetailModal")
+  );
+  const eventDetailContent = document.getElementById("eventDetailContent");
+
+  // Initialize the page
+  function initPage() {
+    // Display events list
+    displayEventsList();
+  }
+
+  // Display events list
+  function displayEventsList() {
+    // Clear events list
+    eventsList.innerHTML = "";
+
+    // Display events
+    eventsData.forEach((event) => {
+      const eventCard = createEventCard(event);
+      const col = document.createElement("div");
+      col.className = "col-md-6 col-lg-4 mb-4";
+      col.appendChild(eventCard);
+      eventsList.appendChild(col);
+    });
+  }
+
+  // Create event card element
+  function createEventCard(event) {
+    const card = document.createElement("div");
+    card.className = "event-item-card";
+    card.setAttribute("data-event-id", event.id);
+
+    // Format date
+    const eventDate = new Date(event.date);
+    const formattedDate = `${eventDate.toLocaleDateString("ar-EG", {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    })}`;
+
+    // Get category Arabic name
+    const categoryArabic = getCategoryArabic(event.category);
+    const categoryClass = `tag-${event.category}`;
+
+    card.innerHTML = `
+            <img src="${event.image}" alt="${event.title}" class="event-item-image">
+            <div class="event-item-content">
+                <h3 class="event-item-title">${event.title}</h3>
+                <div class="event-item-date"><i class="bi bi-calendar-event"></i> ${formattedDate}</div>
+                <div class="event-item-location"><i class="bi bi-geo-alt"></i> ${event.location}</div>
+                <p class="event-item-description">${event.description}</p>
+                <span class="event-item-tag ${categoryClass}">${categoryArabic}</span>
+                <button class="event-item-btn view-details-btn" data-event-id="${event.id}">عرض التفاصيل</button>
+            </div>
+        `;
+
+    // Add click event to card
+    card.addEventListener("click", function () {
+      const eventId = this.getAttribute("data-event-id");
+      showEventDetails(eventId);
+    });
+
+    // Add click event to button (prevent event bubbling)
+    const viewDetailsBtn = card.querySelector(".view-details-btn");
+    viewDetailsBtn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      const eventId = this.getAttribute("data-event-id");
+      showEventDetails(eventId);
+    });
+
+    return card;
+  }
+
+  // Show event details in modal
+  function showEventDetails(eventId) {
+    const event = eventsData.find((e) => e.id == eventId);
+    if (!event) return;
+
+    // Format date
+    const eventDate = new Date(event.date);
+    const formattedDate = `${eventDate.toLocaleDateString("ar-EG", {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    })}`;
+
+    // Get category Arabic name
+    const categoryArabic = getCategoryArabic(event.category);
+
+    // Create event details HTML
+    const eventDetailsHTML = `
+            <div class="event-detail-header">
+                <img src="${event.image}" alt="${event.title}" class="event-detail-image">
+                <h2 class="event-detail-title">${event.title}</h2>
+                <div class="event-detail-meta">
+                    <div class="event-detail-meta-item">
+                        <i class="bi bi-calendar-event"></i>
+                        <span>${formattedDate}</span>
+                    </div>
+                    <div class="event-detail-meta-item">
+                        <i class="bi bi-geo-alt"></i>
+                        <span>${event.location}</span>
+                    </div>
+                    <div class="event-detail-meta-item">
+                        <i class="bi bi-tag"></i>
+                        <span>${categoryArabic}</span>
+                    </div>
+                    <div class="event-detail-meta-item">
+                        <i class="bi bi-clock"></i>
+                        <span>${event.startTime} - ${event.endTime}</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="event-detail-description">
+                ${event.longDescription}
+            </div>
+            
+            <div class="event-detail-additional">
+                <h3 class="event-detail-section-title">معلومات إضافية</h3>
+                <div class="event-detail-info">
+                    <div class="event-detail-info-item">
+                        <div class="event-detail-info-label">المنظم:</div>
+                        <div class="event-detail-info-value">${event.organizer}</div>
+                    </div>
+                    <div class="event-detail-info-item">
+                        <div class="event-detail-info-label">عنوان الفعالية:</div>
+                        <div class="event-detail-info-value">${event.address}</div>
+                    </div>
+                    <div class="event-detail-info-item">
+                        <div class="event-detail-info-label">سعر التذكرة:</div>
+                        <div class="event-detail-info-value">${event.ticketPrice}</div>
+                    </div>
+                    <div class="event-detail-info-item">
+                        <div class="event-detail-info-label">هاتف الاتصال:</div>
+                        <div class="event-detail-info-value">${event.contact}</div>
+                    </div>
+                    <div class="event-detail-info-item">
+                        <div class="event-detail-info-label">البريد الإلكتروني:</div>
+                        <div class="event-detail-info-value">${event.email}</div>
+                    </div>
+                    <div class="event-detail-info-item">
+                        <div class="event-detail-info-label">الموقع الإلكتروني:</div>
+                        <div class="event-detail-info-value">${event.website}</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="event-detail-actions">
+                <button class="event-detail-action-btn event-detail-primary-btn">
+                    <i class="bi bi-ticket"></i> حجز التذاكر
+                </button>
+                <button class="event-detail-action-btn event-detail-secondary-btn">
+                    <i class="bi bi-share"></i> مشاركة الفعالية
+                </button>
+                <button class="event-detail-action-btn event-detail-secondary-btn" data-bs-dismiss="modal">
+                    <i class="bi bi-arrow-left"></i> الرجوع إلى القائمة
+                </button>
+            </div>
+        `;
+
+    // Set event details content
+    eventDetailContent.innerHTML = eventDetailsHTML;
+
+    // Show modal
+    eventDetailModal.show();
+
+    // Add event listeners to action buttons
+    const shareBtn = eventDetailContent.querySelector(
+      ".event-detail-secondary-btn:nth-child(2)"
+    );
+    if (shareBtn) {
+      shareBtn.addEventListener("click", function () {
+        if (navigator.share) {
+          navigator.share({
+            title: event.title,
+            text: event.description,
+            url: window.location.href,
+          });
+        } else {
+          alert("مشاركة الفعالية: " + event.title + "\n" + event.description);
+        }
+      });
+    }
+  }
+
+  // Get Arabic category name
+  function getCategoryArabic(category) {
+    const categories = {
+      cultural: "ثقافي",
+      handmade: "يدوي",
+      sports: "رياضي",
+      music: "موسيقي",
+      art: "فني",
+    };
+    return categories[category] || category;
+  }
+
+  // Initialize the page
+  initPage();
+});
