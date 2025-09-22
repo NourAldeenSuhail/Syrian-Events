@@ -1414,3 +1414,180 @@ document.addEventListener("DOMContentLoaded", function () {
   // Initialize the page
   initPage();
 });
+
+////////////////////////////////////////////////////////////////////////////////  /
+///////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
+// contact.js - JavaScript for Contact Page
+// contact.js - JavaScript for Contact Page
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Sample events data for ticket booking validation
+  const validEvents = [
+    "مهرجان دمشق الثقافي",
+    "معرض حلب للفنون",
+    "سوق حمص للمنتجات اليدوية",
+    "ماراثون طرطوس الدولي",
+    "مهرجان اللاذقية الموسيقي",
+    "ندوة حول التراث السوري",
+    "ورشة الرسم بالحبر",
+    "سباق الدراجات الهوائية",
+    "سوق المنتجات الغذائية",
+    "ليلة موسيقية في القلعة",
+    "معرض صور سوريا الجمال",
+    "ورشة صناعة الفخار",
+    "بطولة كرة القدم المحلية",
+    "حفل أمسيات شعرية",
+    "مهرجان الرقص الشعبي",
+    "معرض الخط العربي",
+    "سوق التراث",
+    "بطولة الشطرنج الوطنية",
+    "حفل موسيقى كلاسيكية",
+    "معرض السجاد اليدوي",
+  ];
+
+  // Get form elements
+  const contactForm = document.getElementById("contactForm");
+  const ticketForm = document.getElementById("ticketForm");
+  const eventNameInput = document.getElementById("eventName");
+
+  // Initialize the page
+  function initPage() {
+    // Add event listeners to forms
+    if (contactForm) {
+      contactForm.addEventListener("submit", handleContactFormSubmit);
+    }
+
+    if (ticketForm) {
+      ticketForm.addEventListener("submit", handleTicketFormSubmit);
+    }
+
+    // Add input validation for event name
+    if (eventNameInput) {
+      eventNameInput.addEventListener("input", validateEventName);
+    }
+  }
+
+  // Handle contact form submission
+  function handleContactFormSubmit(e) {
+    e.preventDefault();
+
+    // Get form values
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const subject = document.getElementById("subject").value;
+    const message = document.getElementById("message").value;
+
+    // Validate form
+    if (!name || !email || !subject || !message) {
+      showAlert("يرجى ملء جميع الحقول المطلوبة", "danger");
+      return;
+    }
+
+    // Simulate form submission
+    setTimeout(() => {
+      // Show success message
+      showAlert(
+        "تم إرسال رسالتك بنجاح! سنقوم بالرد عليك في أقرب وقت ممكن.",
+        "success"
+      );
+
+      // Reset form
+      contactForm.reset();
+    }, 1000);
+  }
+
+  // Handle ticket form submission
+  function handleTicketFormSubmit(e) {
+    e.preventDefault();
+
+    // Get form values
+    const eventName = document.getElementById("eventName").value;
+    const ticketName = document.getElementById("ticketName").value;
+    const ticketEmail = document.getElementById("ticketEmail").value;
+    const ticketCount = document.getElementById("ticketCount").value;
+
+    // Validate form
+    if (!eventName || !ticketName || !ticketEmail || !ticketCount) {
+      showAlert("يرجى ملء جميع الحقول المطلوبة", "danger");
+      return;
+    }
+
+    // Validate event name
+    if (!validEvents.includes(eventName)) {
+      showAlert(
+        "الفعالية المحددة غير موجودة. يرجى اختيار فعالية من القائمة.",
+        "danger"
+      );
+      return;
+    }
+
+    // Simulate ticket booking
+    setTimeout(() => {
+      // Show success message
+      showAlert(
+        `تم حجز ${ticketCount} تذكرة لفعالية "${eventName}" بنجاح! سيتم إرسال التفاصيل إلى بريدك الإلكتروني.`,
+        "success"
+      );
+
+      // Reset form
+      ticketForm.reset();
+    }, 1000);
+  }
+
+  // Validate event name as user types
+  function validateEventName() {
+    const eventName = eventNameInput.value;
+    const datalist = document.getElementById("eventList");
+    const options = datalist.querySelectorAll("option");
+
+    // Clear any previous validation
+    eventNameInput.classList.remove("is-valid", "is-invalid");
+
+    if (eventName.trim() === "") {
+      return;
+    }
+
+    // Check if event name exists in valid events
+    if (validEvents.includes(eventName)) {
+      eventNameInput.classList.add("is-valid");
+    } else {
+      eventNameInput.classList.add("is-invalid");
+    }
+  }
+
+  // Show alert message
+  function showAlert(message, type) {
+    // Create alert element
+    const alertDiv = document.createElement("div");
+    alertDiv.className = `alert alert-${type} alert-dismissible fade show`;
+    alertDiv.role = "alert";
+    alertDiv.innerHTML = `
+            ${message}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        `;
+
+    // Find the appropriate form to add the alert to
+    let parentForm = contactForm;
+    if (event.target && event.target.closest("#ticketForm")) {
+      parentForm = ticketForm;
+    }
+
+    // Insert alert after the form header
+    const formHeader = parentForm.querySelector(".section-header");
+    if (formHeader) {
+      formHeader.parentNode.insertBefore(alertDiv, formHeader.nextSibling);
+    } else {
+      parentForm.insertBefore(alertDiv, parentForm.firstChild);
+    }
+
+    // Auto-dismiss after 5 seconds
+    setTimeout(() => {
+      const bsAlert = new bootstrap.Alert(alertDiv);
+      bsAlert.close();
+    }, 5000);
+  }
+
+  // Initialize the page
+  initPage();
+});

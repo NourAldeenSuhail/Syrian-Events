@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>فعاليات سوريا - تواصل معنا</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Contact CSS -->
+    <link rel="stylesheet" href="contact.css" />
+  </head>
+  <body>
+    <header>
+      <!-- Navigation Bar -->
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top px-4 py-3">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="img/logo1.jpg" alt="شعار" class="site-logo" />
+            فعاليات سوريا
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-between"
+            id="navbarNav"
+          >
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html"
+                  ><i class="bi bi-house-door"></i> الصفحة الرئيسية</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="events.html"
+                  ><i class="bi bi-calendar-event"></i> الفعاليات</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="event-details.html"
+                  ><i class="bi bi-info-circle"></i> تفاصيل الفعالية</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about-guide.html"
+                  ><i class="bi bi-book"></i> عن الدليل</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#"
+                  ><i class="bi bi-envelope"></i> تواصل معنا</a
+                >
+              </li>
+            </ul>
+            <button class="dark-mode-toggle" id="darkModeToggle">
+              <i class="bi bi-moon"></i>
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Contact Header -->
+      <section class="contact-header">
+        <div class="contact-header-container">
+          <div class="contact-header-content">
+            <div class="contact-header-icon">
+              <i class="bi bi-envelope-paper-heart"></i>
+            </div>
+            <h1 class="contact-header-title">تواصل معنا</h1>
+            <p class="contact-header-subtitle">
+              نحن هنا لمساعدتك وسماع آرائك ومقترحاتك لتطوير منصتنا
+            </p>
+            <div class="contact-header-stats">
+              <div class="stat-item">
+                <span class="stat-number"><i class="bi bi-clock"></i></span>
+                <span class="stat-label">24/7</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number"><i class="bi bi-chat-dots"></i></span>
+                <span class="stat-label">دعم فوري</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number"
+                  ><i class="bi bi-emoji-smile"></i
+                ></span>
+                <span class="stat-label">رضا العملاء</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-header-decoration">
+          <div class="decoration-wave"></div>
+          <div class="decoration-wave"></div>
+          <div class="decoration-wave"></div>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="row">
+          <!-- Contact Form Section -->
+          <div class="col-lg-6 mb-5">
+            <div class="contact-section">
+              <div class="section-header">
+                <h2 class="section-title">أرسل لنا رسالة</h2>
+                <p class="section-subtitle">
+                  سنقوم بالرد عليك في أقرب وقت ممكن
+                </p>
+              </div>
+
+              <form id="contactForm">
+                <div class="mb-4">
+                  <label for="name" class="form-label">الاسم الكامل</label>
+                  <div class="input-group">
+                    <span class="input-group-text"
+                      ><i class="bi bi-person"></i
+                    ></span>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="name"
+                      placeholder="أدخل اسمك الكامل"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="mb-4">
+                  <label for="email" class="form-label"
+                    >البريد الإلكتروني</label
+                  >
+                  <div class="input-group">
+                    <span class="input-group-text"
+                      ><i class="bi bi-envelope"></i
+                    ></span>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="email"
+                      placeholder="أدخل بريدك الإلكتروني"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="mb-4">
+                  <label for="subject" class="form-label">الموضوع</label>
+                  <div class="input-group">
+                    <span class="input-group-text"
+                      ><i class="bi bi-tag"></i
+                    ></span>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="subject"
+                      placeholder="أدخل موضوع الرسالة"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="mb-4">
+                  <label for="message" class="form-label">الرسالة</label>
+                  <div class="input-group">
+                    <span class="input-group-text"
+                      ><i class="bi bi-chat-left-text"></i
+                    ></span>
+                    <textarea
+                      class="form-control"
+                      id="message"
+                      rows="5"
+                      placeholder="اكتب رسالتك هنا..."
+                      required
+                    ></textarea>
+                  </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100 py-3">
+                  إرسال الرسالة
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Ticket Booking Section -->
+          <div class="col-lg-6 mb-5">
+            <div class="contact-section">
+              <div class="section-header">
+                <h2 class="section-title">حجز تذكرة</h2>
+                <p class="section-subtitle">
+                  احجز تذكرتك للفعالية التي ترغب بحضورها
+                </p>
+              </div>
+
+              <form id="ticketForm">
+                <div class="mb-4">
+                  <label for="eventName" class="form-label">اسم الفعالية</label>
+                  <div class="input-group">
+                    <span class="input-group-text"
+                      ><i class="bi bi-calendar-event"></i
+                    ></span>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="eventName"
+                      list="eventList"
+                      placeholder="ابدأ بكتابة اسم الفعالية"
+                      required
+                    />
+                    <datalist id="eventList">
+                      <option value="مهرجان دمشق الثقافي"></option>
+                      <option value="معرض حلب للفنون"></option>
+                      <option value="سوق حمص للمنتجات اليدوية"></option>
+                      <option value="ماراثون طرطوس الدولي"></option>
+                      <option value="مهرجان اللاذقية الموسيقي"></option>
+                      <option value="ندوة حول التراث السوري"></option>
+                      <option value="ورشة الرسم بالحبر"></option>
+                      <option value="سباق الدراجات الهوائية"></option>
+                      <option value="سوق المنتجات الغذائية"></option>
+                      <option value="ليلة موسيقية في القلعة"></option>
+                      <option value="معرض صور سوريا الجمال"></option>
+                      <option value="ورشة صناعة الفخار"></option>
+                      <option value="بطولة كرة القدم المحلية"></option>
+                      <option value="حفل أمسيات شعرية"></option>
+                      <option value="مهرجان الرقص الشعبي"></option>
+                      <option value="معرض الخط العربي"></option>
+                      <option value="سوق التراث"></option>
+                      <option value="بطولة الشطرنج الوطنية"></option>
+                      <option value="حفل موسيقى كلاسيكية"></option>
+                      <option value="معرض السجاد اليدوي"></option>
+                    </datalist>
+                  </div>
+                  <div class="form-text">
+                    ابدأ بكتابة اسم الفعالية وسيظهر لك الاختيار المناسب
+                  </div>
+                </div>
+
+                <div class="mb-4">
+                  <label for="ticketName" class="form-label"
+                    >الاسم الكامل</label
+                  >
+                  <div class="input-group">
+                    <span class="input-group-text"
+                      ><i class="bi bi-person"></i
+                    ></span>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="ticketName"
+                      placeholder="أدخل اسمك الكامل"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="mb-4">
+                  <label for="ticketEmail" class="form-label"
+                    >البريد الإلكتروني</label
+                  >
+                  <div class="input-group">
+                    <span class="input-group-text"
+                      ><i class="bi bi-envelope"></i
+                    ></span>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="ticketEmail"
+                      placeholder="أدخل بريدك الإلكتروني"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="mb-4">
+                  <label for="ticketCount" class="form-label"
+                    >عدد التذاكر</label
+                  >
+                  <div class="input-group">
+                    <span class="input-group-text"
+                      ><i class="bi bi-ticket-perforated"></i
+                    ></span>
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="ticketCount"
+                      min="1"
+                      max="10"
+                      value="1"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100 py-3">
+                  حجز التذكرة
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Information Section -->
+        <div class="row">
+          <div class="col-12">
+            <div class="contact-info-section">
+              <div class="section-header text-center mb-4">
+                <h2 class="section-title">معلومات التواصل البديلة</h2>
+                <p class="section-subtitle">
+                  يمكنك التواصل معنا عبر القنوات التالية
+                </p>
+              </div>
+
+              <div class="row">
+                <div class="col-md-4 mb-4">
+                  <div class="contact-info-card">
+                    <div class="contact-info-icon">
+                      <i class="bi bi-geo-alt"></i>
+                    </div>
+                    <h3 class="contact-info-title">العنوان</h3>
+                    <p class="contact-info-text">
+                      شارع الثورة، دمشق القديمة، دمشق، سوريا
+                    </p>
+                  </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                  <div class="contact-info-card">
+                    <div class="contact-info-icon">
+                      <i class="bi bi-telephone"></i>
+                    </div>
+                    <h3 class="contact-info-title">هاتف</h3>
+                    <p class="contact-info-text">+963 11 123 4567</p>
+                    <p class="contact-info-text">+963 93 456 7890</p>
+                  </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                  <div class="contact-info-card">
+                    <div class="contact-info-icon">
+                      <i class="bi bi-envelope"></i>
+                    </div>
+                    <h3 class="contact-info-title">البريد الإلكتروني</h3>
+                    <p class="contact-info-text">info@syrian-events.com</p>
+                    <p class="contact-info-text">support@syrian-events.com</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="social-section text-center mt-5">
+                <h3 class="social-title">تابعنا على وسائل التواصل الاجتماعي</h3>
+                <div class="social-links">
+                  <a href="#" class="social-link"
+                    ><i class="bi bi-facebook"></i
+                  ></a>
+                  <a href="#" class="social-link"
+                    ><i class="bi bi-twitter"></i
+                  ></a>
+                  <a href="#" class="social-link"
+                    ><i class="bi bi-instagram"></i
+                  ></a>
+                  <a href="#" class="social-link"
+                    ><i class="bi bi-youtube"></i
+                  ></a>
+                  <a href="#" class="social-link"
+                    ><i class="bi bi-linkedin"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-grid">
+          <!-- About Column -->
+          <div class="footer-col">
+            <h3>فعاليات سوريا</h3>
+            <p>
+              منصة شاملة تهدف إلى تعزيز الثقافة والفنون والرياضة في جميع أنحاء
+              سوريا.
+            </p>
+            <div class="social-links">
+              <a href="#" class="social-link"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="social-link"><i class="bi bi-twitter"></i></a>
+              <a href="#" class="social-link"
+                ><i class="bi bi-instagram"></i
+              ></a>
+              <a href="#" class="social-link"><i class="bi bi-youtube"></i></a>
+            </div>
+          </div>
+
+          <!-- Contact Column -->
+          <div class="footer-col">
+            <h3>معلومات التواصل</h3>
+            <div class="contact-info">
+              <p><i class="bi bi-geo-alt"></i> دمشق، سوريا</p>
+              <p><i class="bi bi-telephone"></i> +963 11 123 4567</p>
+              <p><i class="bi bi-envelope"></i> info@syrian-events.com</p>
+              <p><i class="bi bi-clock"></i> الأحد - الخميس: 9:00 - 17:00</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            &copy; 2024 فعاليات سوريا. جميع الحقوق محفوظة. تم التحديث في: أكتوبر
+            2024
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+  </body>
+</html>
