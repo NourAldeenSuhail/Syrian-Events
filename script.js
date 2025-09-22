@@ -1244,3 +1244,173 @@ document.addEventListener("DOMContentLoaded", function () {
   // Initialize the page
   initPage();
 });
+
+////////////////////////////////////////////////////////////////////////////////  /
+///////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
+// about-guide.js - JavaScript for About Guide Page
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Team members data
+  const teamMembers = [
+    {
+      id: 1,
+      name: "أحمد محمد",
+      role: "المؤسس والمدير التنفيذي",
+      bio: "خبير في إدارة الفعاليات الثقافية مع أكثر من 15 عاماً من الخبرة في تنظيم المهرجانات والفعاليات الكبرى في سوريا.",
+      image: "https://placehold.co/600x600/e74c3c/ffffff?text=أحمد",
+      social: {
+        facebook: "#",
+        twitter: "#",
+        linkedin: "#",
+        instagram: "#",
+      },
+    },
+    {
+      id: 2,
+      name: "ليلى حسن",
+      role: "مديرة المحتوى",
+      bio: "صحفية وكاتبة متخصصة في الثقافة والفنون، مسؤولة عن تطوير المحتوى وضمان جودة المعلومات المقدمة على المنصة.",
+      image: "https://placehold.co/600x600/3498db/ffffff?text=ليلى",
+      social: {
+        facebook: "#",
+        twitter: "#",
+        linkedin: "#",
+        instagram: "#",
+      },
+    },
+    {
+      id: 3,
+      name: "محمود علي",
+      role: "مدير التكنولوجيا",
+      bio: "مهندس برمجيات متخصص في تطوير المنصات الرقمية، مسؤول عن الجانب التقني للمنصة وتطوير ميزاتها الجديدة.",
+      image: "https://placehold.co/600x600/2ecc71/ffffff?text=محمود",
+      social: {
+        facebook: "#",
+        twitter: "#",
+        linkedin: "#",
+        instagram: "#",
+      },
+    },
+    {
+      id: 4,
+      name: "سارة إبراهيم",
+      role: "مديرة التسويق",
+      bio: "خبيرة تسويق رقمي مع خبرة في الترويج للفعاليات الثقافية والفنية، مسؤولة عن استراتيجيات التسويق والعلاقات العامة.",
+      image: "https://placehold.co/600x600/f39c12/ffffff?text=سارة",
+      social: {
+        facebook: "#",
+        twitter: "#",
+        linkedin: "#",
+        instagram: "#",
+      },
+    },
+    {
+      id: 5,
+      name: "عمر خالد",
+      role: "مدير الشراكات",
+      bio: "متخصص في بناء الشراكات الاستراتيجية مع المؤسسات الثقافية والفنية، مسؤول عن توسيع شبكة شركاء المنصة.",
+      image: "https://placehold.co/600x600/9b59b6/ffffff?text=عمر",
+      social: {
+        facebook: "#",
+        twitter: "#",
+        linkedin: "#",
+        instagram: "#",
+      },
+    },
+  ];
+
+  // Get elements
+  const teamGrid = document.getElementById("teamGrid");
+
+  // Initialize the page
+  function initPage() {
+    // Display team members
+    displayTeamMembers();
+
+    // Animate elements when they come into view
+    animateOnScroll();
+  }
+
+  // Display team members
+  function displayTeamMembers() {
+    // Clear team grid
+    teamGrid.innerHTML = "";
+
+    // Display team members
+    teamMembers.forEach((member) => {
+      const teamMember = createTeamMemberCard(member);
+      teamGrid.appendChild(teamMember);
+    });
+  }
+
+  // Create team member card element
+  function createTeamMemberCard(member) {
+    const card = document.createElement("div");
+    card.className = "team-member";
+    card.setAttribute("data-member-id", member.id);
+
+    card.innerHTML = `
+            <img src="${member.image}" alt="${member.name}" class="team-member-image">
+            <div class="team-member-overlay">
+                <h3 class="team-member-name">${member.name}</h3>
+                <div class="team-member-role">${member.role}</div>
+                <p class="team-member-bio">${member.bio}</p>
+                <div class="team-member-social">
+                    <a href="${member.social.facebook}" class="team-member-social-link"><i class="bi bi-facebook"></i></a>
+                    <a href="${member.social.twitter}" class="team-member-social-link"><i class="bi bi-twitter"></i></a>
+                    <a href="${member.social.linkedin}" class="team-member-social-link"><i class="bi bi-linkedin"></i></a>
+                    <a href="${member.social.instagram}" class="team-member-social-link"><i class="bi bi-instagram"></i></a>
+                </div>
+            </div>
+        `;
+
+    return card;
+  }
+
+  // Animate elements when they come into view
+  function animateOnScroll() {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px",
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    // Observe mission cards
+    const missionCards = document.querySelectorAll(".mission-card");
+    missionCards.forEach((card) => {
+      observer.observe(card);
+    });
+
+    // Observe value cards
+    const valueCards = document.querySelectorAll(".value-card");
+    valueCards.forEach((card) => {
+      observer.observe(card);
+    });
+
+    // Observe team members
+    const teamMembers = document.querySelectorAll(".team-member");
+    teamMembers.forEach((member) => {
+      observer.observe(member);
+    });
+
+    // Observe policy cards
+    const policyCards = document.querySelectorAll(
+      ".policy-card, .general-policy-card"
+    );
+    policyCards.forEach((card) => {
+      observer.observe(card);
+    });
+  }
+
+  // Initialize the page
+  initPage();
+});
