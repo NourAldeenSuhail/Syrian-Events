@@ -1473,28 +1473,61 @@ document.addEventListener("DOMContentLoaded", function () {
     e.preventDefault();
 
     // Get form values
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const subject = document.getElementById("subject").value;
-    const message = document.getElementById("message").value;
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const subject = document.getElementById("subject").value.trim();
+    const message = document.getElementById("message").value.trim();
 
     // Validate form
     if (!name || !email || !subject || !message) {
-      showAlert("يرجى ملء جميع الحقول المطلوبة", "danger");
+      showAlert("يرجى ملء جميع الحقول المطلوبة", "danger", contactForm);
       return;
     }
 
-    // Simulate form submission
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      showAlert("يرجى إدخال بريد إلكتروني صحيح", "danger", contactForm);
+      return;
+    }
+
+    // Show loading state
+    const submitButton = contactForm.querySelector('button[type="submit"]');
+    const originalButtonText = submitButton.innerHTML;
+    submitButton.disabled = true;
+    submitButton.innerHTML =
+      '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> جاري الإرسال...';
+
+    // Simulate form submission with setTimeout
     setTimeout(() => {
+      // Reset button state
+      submitButton.disabled = false;
+      submitButton.innerHTML = originalButtonText;
+
       // Show success message
       showAlert(
         "تم إرسال رسالتك بنجاح! سنقوم بالرد عليك في أقرب وقت ممكن.",
-        "success"
+        "success",
+        contactForm
       );
 
-      // Reset form
+      // Reset form after success
       contactForm.reset();
-    }, 1000);
+
+      // Remove validation classes
+      document
+        .getElementById("name")
+        .classList.remove("is-valid", "is-invalid");
+      document
+        .getElementById("email")
+        .classList.remove("is-valid", "is-invalid");
+      document
+        .getElementById("subject")
+        .classList.remove("is-valid", "is-invalid");
+      document
+        .getElementById("message")
+        .classList.remove("is-valid", "is-invalid");
+    }, 1500);
   }
 
   // Handle ticket form submission
@@ -1502,14 +1535,21 @@ document.addEventListener("DOMContentLoaded", function () {
     e.preventDefault();
 
     // Get form values
-    const eventName = document.getElementById("eventName").value;
-    const ticketName = document.getElementById("ticketName").value;
-    const ticketEmail = document.getElementById("ticketEmail").value;
+    const eventName = document.getElementById("eventName").value.trim();
+    const ticketName = document.getElementById("ticketName").value.trim();
+    const ticketEmail = document.getElementById("ticketEmail").value.trim();
     const ticketCount = document.getElementById("ticketCount").value;
 
     // Validate form
     if (!eventName || !ticketName || !ticketEmail || !ticketCount) {
-      showAlert("يرجى ملء جميع الحقول المطلوبة", "danger");
+      showAlert("يرجى ملء جميع الحقول المطلوبة", "danger", ticketForm);
+      return;
+    }
+
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(ticketEmail)) {
+      showAlert("يرجى إدخال بريد إلكتروني صحيح", "danger", ticketForm);
       return;
     }
 
@@ -1517,34 +1557,65 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!validEvents.includes(eventName)) {
       showAlert(
         "الفعالية المحددة غير موجودة. يرجى اختيار فعالية من القائمة.",
-        "danger"
+        "danger",
+        ticketForm
       );
       return;
     }
 
-    // Simulate ticket booking
+    // Validate ticket count
+    if (ticketCount < 1 || ticketCount > 10) {
+      showAlert("عدد التذاكر يجب أن يكون بين 1 و 10", "danger", ticketForm);
+      return;
+    }
+
+    // Show loading state
+    const submitButton = ticketForm.querySelector('button[type="submit"]');
+    const originalButtonText = submitButton.innerHTML;
+    submitButton.disabled = true;
+    submitButton.innerHTML =
+      '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> جاري الحجز...';
+
+    // Simulate ticket booking with setTimeout
     setTimeout(() => {
+      // Reset button state
+      submitButton.disabled = false;
+      submitButton.innerHTML = originalButtonText;
+
       // Show success message
       showAlert(
         `تم حجز ${ticketCount} تذكرة لفعالية "${eventName}" بنجاح! سيتم إرسال التفاصيل إلى بريدك الإلكتروني.`,
-        "success"
+        "success",
+        ticketForm
       );
 
-      // Reset form
+      // Reset form after success
       ticketForm.reset();
-    }, 1000);
+
+      // Remove validation classes
+      document
+        .getElementById("eventName")
+        .classList.remove("is-valid", "is-invalid");
+      document
+        .getElementById("ticketName")
+        .classList.remove("is-valid", "is-invalid");
+      document
+        .getElementById("ticketEmail")
+        .classList.remove("is-valid", "is-invalid");
+      document
+        .getElementById("ticketCount")
+        .classList.remove("is-valid", "is-invalid");
+    }, 1500);
   }
 
   // Validate event name as user types
   function validateEventName() {
-    const eventName = eventNameInput.value;
-    const datalist = document.getElementById("eventList");
-    const options = datalist.querySelectorAll("option");
+    const eventName = eventNameInput.value.trim();
 
     // Clear any previous validation
     eventNameInput.classList.remove("is-valid", "is-invalid");
 
-    if (eventName.trim() === "") {
+    if (eventName === "") {
       return;
     }
 
@@ -1557,35 +1628,42 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Show alert message
-  function showAlert(message, type) {
+  function showAlert(message, type, formElement) {
+    // Remove any existing alerts
+    const existingAlerts = formElement.querySelectorAll(".alert");
+    existingAlerts.forEach((alert) => alert.remove());
+
     // Create alert element
     const alertDiv = document.createElement("div");
     alertDiv.className = `alert alert-${type} alert-dismissible fade show`;
     alertDiv.role = "alert";
     alertDiv.innerHTML = `
-            ${message}
+            <div class="d-flex align-items-center">
+                ${
+                  type === "success"
+                    ? '<i class="bi bi-check-circle-fill me-2"></i>'
+                    : '<i class="bi bi-exclamation-triangle-fill me-2"></i>'
+                }
+                <div>${message}</div>
+            </div>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         `;
 
-    // Find the appropriate form to add the alert to
-    let parentForm = contactForm;
-    if (event.target && event.target.closest("#ticketForm")) {
-      parentForm = ticketForm;
-    }
-
-    // Insert alert after the form header
-    const formHeader = parentForm.querySelector(".section-header");
+    // Insert alert after the form header or at the beginning of the form
+    const formHeader = formElement.querySelector(".section-header");
     if (formHeader) {
       formHeader.parentNode.insertBefore(alertDiv, formHeader.nextSibling);
     } else {
-      parentForm.insertBefore(alertDiv, parentForm.firstChild);
+      formElement.insertBefore(alertDiv, formElement.firstChild);
     }
 
-    // Auto-dismiss after 5 seconds
-    setTimeout(() => {
-      const bsAlert = new bootstrap.Alert(alertDiv);
-      bsAlert.close();
-    }, 5000);
+    // Auto-dismiss after 5 seconds for success messages
+    if (type === "success") {
+      setTimeout(() => {
+        const bsAlert = new bootstrap.Alert(alertDiv);
+        bsAlert.close();
+      }, 5000);
+    }
   }
 
   // Initialize the page
