@@ -444,7 +444,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <div class="event-tags">
                     <span class="event-tag ${categoryClass}">${categoryArabic}</span>
                 </div>
-                <a href="#" class="btn-details">عرض التفاصيل</a>
+                <a href="details.html" class="btn-details">عرض التفاصيل</a>
             </div>
         `;
 
