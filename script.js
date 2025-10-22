@@ -120,8 +120,7 @@ document.addEventListener("DOMContentLoaded", function () {
       date: "2024-10-15",
       location: "دمشق",
       category: "cultural",
-      image:
-        "https://placehold.co/600x400/e74c3c/ffffff?text=مهرجان+دمشق+الثقافي",
+      image: "img\\1.jpg",
     },
     {
       id: 2,
@@ -131,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
       date: "2024-11-05",
       location: "حلب",
       category: "art",
-      image: "https://placehold.co/600x400/9b59b6/ffffff?text=معرض+حلب+الفنون",
+      image: "img\\2.jpg",
     },
     {
       id: 3,
@@ -140,7 +139,7 @@ document.addEventListener("DOMContentLoaded", function () {
       date: "2024-11-25",
       location: "حمص",
       category: "handmade",
-      image: "https://placehold.co/600x400/2ecc71/ffffff?text=سوق+حمص+اليدوية",
+      image: "img\\3.jpg",
     },
     {
       id: 4,
@@ -149,7 +148,7 @@ document.addEventListener("DOMContentLoaded", function () {
       date: "2024-12-20",
       location: "طرطوس",
       category: "sports",
-      image: "https://placehold.co/600x400/3498db/ffffff?text=ماراثون+طرطوس",
+      image: "img\\4.jpg",
     },
     {
       id: 5,
@@ -158,8 +157,7 @@ document.addEventListener("DOMContentLoaded", function () {
       date: "2024-12-10",
       location: "اللاذقية",
       category: "music",
-      image:
-        "https://placehold.co/600x400/f39c12/ffffff?text=مهرجان+اللاذقية+الموسيقي",
+      image: "img\\5.jpg",
     },
     {
       id: 6,
@@ -169,7 +167,7 @@ document.addEventListener("DOMContentLoaded", function () {
       date: "2024-10-12",
       location: "دمشق",
       category: "cultural",
-      image: "https://placehold.co/600x400/e74c3c/ffffff?text=ندوة+ثقافية",
+      image: "img\\6.jpg",
     },
     {
       id: 7,
@@ -178,7 +176,7 @@ document.addEventListener("DOMContentLoaded", function () {
       date: "2024-10-18",
       location: "حلب",
       category: "art",
-      image: "https://placehold.co/600x400/9b59b6/ffffff?text=ورشة+فنية",
+      image: "img\\7.jpg",
     },
     {
       id: 8,
@@ -188,7 +186,7 @@ document.addEventListener("DOMContentLoaded", function () {
       date: "2024-10-25",
       location: "دمشق",
       category: "sports",
-      image: "https://placehold.co/600x400/3498db/ffffff?text=فعالية+رياضية",
+      image: "img\\8.jpg",
     },
     {
       id: 9,
@@ -198,7 +196,7 @@ document.addEventListener("DOMContentLoaded", function () {
       date: "2024-11-05",
       location: "حمص",
       category: "handmade",
-      image: "https://placehold.co/600x400/2ecc71/ffffff?text=سوق+غذائي",
+      image: "img\\9.jpg",
     },
     {
       id: 10,
@@ -208,7 +206,7 @@ document.addEventListener("DOMContentLoaded", function () {
       date: "2024-11-15",
       location: "حلب",
       category: "music",
-      image: "https://placehold.co/600x400/f39c12/ffffff?text=حفل+موسيقي",
+      image: "img\\10.jpg",
     },
     {
       id: 11,
@@ -218,7 +216,7 @@ document.addEventListener("DOMContentLoaded", function () {
       date: "2024-11-22",
       location: "اللاذقية",
       category: "art",
-      image: "https://placehold.co/600x400/9b59b6/ffffff?text=معرض+صور",
+      image: "img\\11.jpg",
     },
     {
       id: 12,
@@ -227,7 +225,7 @@ document.addEventListener("DOMContentLoaded", function () {
       date: "2024-11-30",
       location: "دمشق",
       category: "handmade",
-      image: "https://placehold.co/600x400/2ecc71/ffffff?text=ورشة+فخار",
+      image: "img\\12.jpg",
     },
     {
       id: 13,
@@ -236,7 +234,7 @@ document.addEventListener("DOMContentLoaded", function () {
       date: "2024-12-05",
       location: "حلب",
       category: "sports",
-      image: "https://placehold.co/600x400/3498db/ffffff?text=كرة+قدم",
+      image: "img\\13.jpg",
     },
     {
       id: 14,
@@ -246,7 +244,7 @@ document.addEventListener("DOMContentLoaded", function () {
       date: "2024-12-12",
       location: "اللاذقية",
       category: "cultural",
-      image: "https://placehold.co/600x400/e74c3c/ffffff?text=أمسية+شعرية",
+      image: "img\\14.jpg",
     },
     {
       id: 15,
@@ -255,7 +253,7 @@ document.addEventListener("DOMContentLoaded", function () {
       date: "2024-12-18",
       location: "طرطوس",
       category: "music",
-      image: "https://placehold.co/600x400/f39c12/ffffff?text=رقص+شعبي",
+      image: "img\\15.jpg",
     },
     {
       id: 16,
@@ -264,7 +262,7 @@ document.addEventListener("DOMContentLoaded", function () {
       date: "2024-12-22",
       location: "دمشق",
       category: "art",
-      image: "https://placehold.co/600x400/9b59b6/ffffff?text=خط+عربي",
+      image: "img\\16.jpg",
     },
     {
       id: 17,
@@ -274,7 +272,7 @@ document.addEventListener("DOMContentLoaded", function () {
       date: "2024-12-28",
       location: "حمص",
       category: "handmade",
-      image: "https://placehold.co/600x400/2ecc71/ffffff?text=سوق+تراثي",
+      image: "img\\17.jpg",
     },
     {
       id: 18,
@@ -283,7 +281,7 @@ document.addEventListener("DOMContentLoaded", function () {
       date: "2025-01-05",
       location: "حلب",
       category: "sports",
-      image: "https://placehold.co/600x400/3498db/ffffff?text=شطرنج",
+      image: "img\\18.jpg",
     },
     {
       id: 19,
@@ -293,7 +291,7 @@ document.addEventListener("DOMContentLoaded", function () {
       date: "2025-01-12",
       location: "دمشق",
       category: "music",
-      image: "https://placehold.co/600x400/f39c12/ffffff?text=موسيقى+كلاسيكية",
+      image: "img\\19.jpg",
     },
     {
       id: 20,
@@ -303,7 +301,7 @@ document.addEventListener("DOMContentLoaded", function () {
       date: "2025-01-20",
       location: "الحسكة",
       category: "handmade",
-      image: "https://placehold.co/600x400/2ecc71/ffffff?text=سجاد+يدوي",
+      image: "img\\20.jpg",
     },
   ];
 
@@ -536,8 +534,7 @@ document.addEventListener("DOMContentLoaded", function () {
       date: "2024-10-15",
       location: "دمشق",
       category: "cultural",
-      image:
-        "https://placehold.co/600x400/e74c3c/ffffff?text=مهرجان+دمشق+الثقافي",
+      image: "img\\1.jpg",
       longDescription:
         "مهرجان دمشق الثقافي هو حدث سنوي يقام في قلب العاصمة السورية دمشق، ويهدف إلى إحياء التراث الثقافي السوري وإبرازه للعالم. يضم المهرجان مجموعة متنوعة من الفعاليات التي تشمل العروض الموسيقية والمسرحية، المعارض الفنية، ورش العمل الحرفية، والأمسيات الشعرية. يشارك في المهرجان فنانون وحرفيون من جميع أنحاء سوريا، مما يخلق تجربة ثقافية غنية ومتنوعة للزوار. يتميز المهرجان بإقامة فعالياته في مواقع تاريخية وأثرية في دمشق، مما يضيف بعداً تاريخياً وجمالياً خاصاً للفعاليات.",
       organizer: "وزارة الثقافة السورية",
@@ -557,7 +554,7 @@ document.addEventListener("DOMContentLoaded", function () {
       date: "2024-11-05",
       location: "حلب",
       category: "art",
-      image: "https://placehold.co/600x400/9b59b6/ffffff?text=معرض+حلب+الفنون",
+      image: "img\\2.jpg",
       longDescription:
         "معرض حلب للفنون هو تظاهرة فنية سنوية تقام في مدينة حلب، وتجمع بين الفنانين التشكيليين والنحاتين والفنانين الرقميين من مختلف أنحاء سوريا. يهدف المعرض إلى دعم الحركة الفنية في سوريا وإتاحة الفرصة للفنانين الشباب لعرض أعمالهم أمام الجمهور. يضم المعرض أكثر من 200 عمل فني متنوع بين اللوحات الزيتية، المنحوتات، الأعمال الرقمية، والصور الفوتوغرافية. يتميز المعرض بإقامة ورش عمل فنية يومية يشارك فيها الزوار في إنشاء أعمال فنية تحت إشراف فنانين محترفين.",
       organizer: "نقابة الفنانين التشكيليين في حلب",
@@ -576,7 +573,7 @@ document.addEventListener("DOMContentLoaded", function () {
       date: "2024-11-25",
       location: "حمص",
       category: "handmade",
-      image: "https://placehold.co/600x400/2ecc71/ffffff?text=سوق+حمص+اليدوية",
+      image: "img\\3.jpg",
       longDescription:
         "سوق حمص للمنتجات اليدوية هو سوق أسبوعي يقام في ساحة العاصي في مدينة حمص، ويهدف إلى دعم الحرفيين المحليين وتشجيع السياحة المحلية. يضم السوق أكثر من 50 حرفيًا يعرضون منتجاتهم اليدوية المتنوعة التي تشمل السجاد اليدوي، الفخار، النحاسيات، التطريز، والمنتجات الجلدية. يتميز السوق بإقامة ورش عمل مباشرة يشرح فيها الحرفيون تقنيات صناعتهم ويدربون الزوار على أساسيات هذه الحرف. كما يضم السوق زاوية خاصة للأطفال لتعليمهم الحرف اليدوية بطريقة مبسطة وممتعة.",
       organizer: "جمعية الحرفيين في حمص",
@@ -595,7 +592,7 @@ document.addEventListener("DOMContentLoaded", function () {
       date: "2024-12-20",
       location: "طرطوس",
       category: "sports",
-      image: "https://placehold.co/600x400/3498db/ffffff?text=ماراثون+طرطوس",
+      image: "img\\4.jpg",
       longDescription:
         "ماراثون طرطوس الدولي هو حدث رياضي سنوي يجذب المشاركين من مختلف أنحاء العالم. يقام الماراثون على كورنيش طرطوس المطل على البحر المتوسط، ويقدم مسارًا خلابًا يمر بأهم المعالم السياحية في المدينة. يضم الماراثون عدة فئات تنافسية تشمل الماراثون الكامل (42.195 كم)، نصف الماراثون (21.1 كم)، والماراثون المصغر (5 كم) المخصص للعائلات والأطفال. يتميز الماراثون بتنظيمه الاحترافي وتقديم جوائز قيمة للفائزين، كما يشمل فعاليات جانبية مثل معرض المنتجات الرياضية وورش العمل التدريبية.",
       organizer: "الاتحاد السوري لألعاب القوى",
@@ -614,8 +611,7 @@ document.addEventListener("DOMContentLoaded", function () {
       date: "2024-12-10",
       location: "اللاذقية",
       category: "music",
-      image:
-        "https://placehold.co/600x400/f39c12/ffffff?text=مهرجان+اللاذقية+الموسيقي",
+      image: "img\\5.jpg",
       longDescription:
         "مهرجان اللاذقية الموسيقي هو تظاهرة فنية موسيقية تقام سنويًا على مسرح البحر في مدينة اللاذقية. يضم المهرجان فرقًا موسيقية من مختلف أنحاء سوريا، ويشمل أنواعًا متنوعة من الموسيقى من التراثية إلى الحديثة. يتميز المهرجان بإقامة حفلات يومية على مدار أسبوع كامل، كل حفلة تقدم نوعًا موسيقيًا مختلفًا. كما يشمل المهرجان ورش عمل موسيقية لتعليم العزف على الآلات الموسيقية التقليدية، ومعارض للأدوات الموسيقية. يقام المهرجان في أجواء ساحرة على شاطئ البحر، مما يخلق تجربة فريدة للزوار.",
       organizer: "مديرية الثقافة في اللاذقية",
@@ -635,7 +631,7 @@ document.addEventListener("DOMContentLoaded", function () {
       date: "2024-10-12",
       location: "دمشق",
       category: "cultural",
-      image: "https://placehold.co/600x400/e74c3c/ffffff?text=ندوة+ثقافية",
+      image: "img\\6.jpg",
       longDescription:
         "ندوة حول التراث السوري هي فعالية فكرية تهدف إلى مناقشة قضايا التراث السوري وسبل الحفاظ عليه وتطويره في العصر الحديث. تضم الندوة نخبة من الباحثين والخبراء في مجالات التراث المادي وغير المادي، والذين يقدمون أوراقًا بحثية حول مواضيع متنوعة تشمل العمارة التراثية، الحرف اليدوية، الموسيقى والفنون التقليدية، والتراث الغذائي. تتميز الندوة بإقامة جلسات حوارية مفتوحة مع الجمهور، وورش عمل تطبيقية لتعليم تقنيات الحفاظ على التراث. كما تشمل الندوة معرضًا للصور والوثائق التراثية النادرة.",
       organizer: "مركز الدراسات التراثية في سوريا",
@@ -654,7 +650,7 @@ document.addEventListener("DOMContentLoaded", function () {
       date: "2024-10-18",
       location: "حلب",
       category: "art",
-      image: "https://placehold.co/600x400/9b59b6/ffffff?text=ورشة+فنية",
+      image: "img\\7.jpg",
       longDescription:
         "ورشة الرسم بالحبر هي فرصة فريدة لتعلم تقنيات الرسم الحديثة باستخدام الحبر. تقام الورشة في مركز الفنون في حلب وتستمر لمدة ثلاثة أيام، ويشرف عليها فنانون محترفون من سوريا والعالم العربي. تشمل الورشة محاضرات نظرية وتطبيقات عملية، حيث يتعلم المشاركون أساسيات الرسم بالحبر، تقنيات التظليل، وأنواع الأقلام والورق المناسبة. يتميز البرنامج بتخصيص وقت كافٍ لكل مشارك لممارسة المهارات التي تعلمها تحت إشراف المدربين. في نهاية الورشة، يتم عرض أعمال المشاركين في معرض خاص.",
       organizer: "مركز الفنون في حلب",
@@ -674,7 +670,7 @@ document.addEventListener("DOMContentLoaded", function () {
       date: "2024-10-25",
       location: "دمشق",
       category: "sports",
-      image: "https://placehold.co/600x400/3498db/ffffff?text=فعالية+رياضية",
+      image: "img\\8.jpg",
       longDescription:
         "سباق الدراجات الهوائية هو حدث رياضي ممتع يقام في ريف دمشق، ويستهدف عشاق رياضة الدراجات من جميع الأعمار. يمتد مسار السباق لمسافة 30 كم عبر أجمل المناطق الطبيعية في ريف دمشق، بما في ذلك الغابات والتلال والقرى التقليدية. يشمل السباق فئات مختلفة للمحترفين والهواة، مع جوائز قيمة للفائزين. يتميز الحدث بوجود محطات توقف على طول المسار توفر الماء والوجبات الخفيفة للدراجين، كما يتوفر فريق طبي كامل لضمان سلامة المشاركين. يقام السباق تحت إشراف الاتحاد السوري لرياضة الدراجات.",
       organizer: "نادي الدراجات الهوائية في دمشق",
@@ -694,7 +690,7 @@ document.addEventListener("DOMContentLoaded", function () {
       date: "2024-11-05",
       location: "حمص",
       category: "handmade",
-      image: "https://placehold.co/600x400/2ecc71/ffffff?text=سوق+غذائي",
+      image: "img\\9.jpg",
       longDescription:
         "سوق المنتجات الغذائية هو مهرجان سنوي يقام في مدينة حمص، ويهدف إلى تعريف الزوار بأفضل المنتجات الغذائية التقليدية من مختلف المحافظات السورية. يضم السوق أكثر من 60 عارضًا يقدمون منتجات متنوعة تشمل المخللات، المربيات، الحلويات، الأجبان، والزيوت الطبيعية. يتميز السوق بإقامة ورش عمل مباشرة لتعليم الزوار كيفية صنع بعض المنتجات الغذائية التقليدية، كما يشمل مسابقات تذوق للمنتجات المختلفة. يقام السوق في أجواء احتفالية مع عروض موسيقية وفقرات ترفيهية للعائلات.",
       organizer: "جمعية الطهاة في حمص",
@@ -714,7 +710,7 @@ document.addEventListener("DOMContentLoaded", function () {
       date: "2024-11-15",
       location: "حلب",
       category: "music",
-      image: "https://placehold.co/600x400/f39c12/ffffff?text=حفل+موسيقي",
+      image: "img\\10.jpg",
       longDescription:
         "ليلة موسيقية في القلعة هي حدث فني مميز يقام داخل قلعة حلب الأثرية، ويجمع بين الموسيقى والتراث في أجواء ساحرة لا تُنسى. يضم الحفل فرقًا موسيقية من مختلف أنحاء سوريا، تقدم مزيجًا من الموسيقى التراثية والحديثة. يتميز الحدث بإضاءة خاصة للقلعة تبرز جمالها المعماري، كما يشمل عروضًا للرقص الشعبي السوري. يقام الحفل في الهواء الطلق داخل باحة القلعة، مع توفير مقاعد مريحة للزوار. يعتبر هذا الحدث فرصة فريدة للاستمتاع بالموسيقى في واحدة من أجمل المواقع الأثرية في العالم.",
       organizer: "مديرية الثقافة في حلب",
@@ -734,7 +730,7 @@ document.addEventListener("DOMContentLoaded", function () {
       date: "2024-11-22",
       location: "اللاذقية",
       category: "art",
-      image: "https://placehold.co/600x400/9b59b6/ffffff?text=معرض+صور",
+      image: "img\\11.jpg",
       longDescription:
         "معرض صور سوريا الجمال هو تظاهرة فنية تهدف إلى إبراز جمال سوريا من خلال عدسة المصورين السوريين. يضم المعرض أكثر من 150 صورة فوتوغرافية التقطت في مختلف أنحاء سوريا، من الجبال إلى السهول، ومن السواحل إلى الصحاري، ومن المواقع الأثرية إلى المدن الحديثة. يشارك في المعرض نخبة من المصورين المحترفين والهواة من جميع المحافظات السورية. يتميز المعرض بإقامة ورش عمل في التصوير الفوتوغرافي يقدمها مصورون محترفون، كما يشمل مسابقة لأفضل صورة يتم اختيارها من قبل لجنة تحكيم متخصصة.",
       organizer: "نادي التصوير الفوتوغرافي في اللاذقية",
@@ -753,7 +749,7 @@ document.addEventListener("DOMContentLoaded", function () {
       date: "2024-11-30",
       location: "دمشق",
       category: "handmade",
-      image: "https://placehold.co/600x400/2ecc71/ffffff?text=ورشة+فخار",
+      image: "img\\12.jpg",
       longDescription:
         "ورشة صناعة الفخار هي فرصة فريدة لتعلم هذه الحرفة التقليدية العريقة من أيدي خبراء سوريين. تقام الورشة في حي الفخار في دمشق، وتستمر لمدة يومين، حيث يتعلم المشاركون أساسيات صناعة الفخار من تحضير الطين إلى التشكيل والحرق والتزجيج. يتميز البرنامج بتقسيم المشاركين إلى مجموعات صغيرة لضمان حصول كل مشارك على الاهتمام الكافي من المدربين. في نهاية الورشة، يحصل كل مشارك على القطعة التي صنعها كتذكار. تهدف الورشة إلى الحفاظ على هذه الحرفة التقليدية ونقلها للأجيال الجديدة.",
       organizer: "جمعية الحرف اليدوية في دمشق",
@@ -772,7 +768,7 @@ document.addEventListener("DOMContentLoaded", function () {
       date: "2024-12-05",
       location: "حلب",
       category: "sports",
-      image: "https://placehold.co/600x400/3498db/ffffff?text=كرة+قدم",
+      image: "img\\13.jpg",
       longDescription:
         "بطولة كرة القدم المحلية هي حدث رياضي كبير يجمع بين فرق كرة القدم من مختلف المحافظات السورية. تقام البطولة على مدار أسبوع كامل في ملعب حلب الدولي، وتضم 16 فريقًا يتنافسون على كأس البطولة. تتميز البطولة بنظام خروج المغلوب، مع إقامة مباراتين يوميًا في أجواء احتفالية حماسية. يحضر البطولة آلاف المشجعين من جميع أنحاء سوريا، مما يخلق جوًا من الحماس والتنافس الشريف. تشمل البطولة أيضًا فعاليات جانبية مثل معرض المنتجات الرياضية وورش عمل تدريبية للأطفال.",
       organizer: "الاتحاد السوري لكرة القدم",
@@ -792,7 +788,7 @@ document.addEventListener("DOMContentLoaded", function () {
       date: "2024-12-12",
       location: "اللاذقية",
       category: "cultural",
-      image: "https://placehold.co/600x400/e74c3c/ffffff?text=أمسية+شعرية",
+      image: "img\\14.jpg",
       longDescription:
         "حفل أمسيات شعرية هو تظاهرة ثقافية تقام في المسرح الروماني في اللاذقية، وتجمع بين نخبة من شعراء سوريا البارزين. يمتد الحفل على مدار ثلاثة أيام، حيث يقدم كل شاعر قصائده في جو من الأناقة والرقي. تشمل الأمسيات الشعرية قصائد في الحب، الوطن، الطبيعة، والقضايا الإنسانية، مع مراعاة التنوع في الأساليب الشعرية من العمودي إلى التفعيلة إلى النثر. يتميز الحدث بإقامة جلسات نقاشية بين الشعراء والجمهور، كما يشمل معرضًا للكتب الشعرية. يعتبر هذا الحدث فرصة فريدة لعشاق الشعر للاستمتاع بأجمل القصائد في واحدة من أجمل المواقع الأثرية في سوريا.",
       organizer: "اتحاد الكتاب العرب في اللاذقية",
@@ -811,7 +807,7 @@ document.addEventListener("DOMContentLoaded", function () {
       date: "2024-12-18",
       location: "طرطوس",
       category: "music",
-      image: "https://placehold.co/600x400/f39c12/ffffff?text=رقص+شعبي",
+      image: "img\\15.jpg",
       longDescription:
         "مهرجان الرقص الشعبي هو تظاهرة فنية تهدف إلى إبراز تنوع التراث الرقصي السوري من مختلف المناطق والمحافظات. يقام المهرجان على مدار يومين في المسرح المكشوف في طرطوس، ويضم فرقًا فلكلورية من جميع أنحاء سوريا. تقدم كل فرقة عروضها الخاصة التي تعكس تراث منطقتها، من الدبكة الشمالية إلى الرقصات الشرقية والجنوبية. يتميز المهرجان بإقامة ورش عمل لتعليم أساسيات الرقص الشعبي السوري، كما يشمل مسابقة لأفضل فرقة فلكلورية. يقام المهرجان في أجواء احتفالية مع إضاءة خاصة وديكورات تقليدية تضفي جوًا من البهجة والفرح.",
       organizer: "مديرية الثقافة في طرطوس",
@@ -830,7 +826,7 @@ document.addEventListener("DOMContentLoaded", function () {
       date: "2024-12-22",
       location: "دمشق",
       category: "art",
-      image: "https://placehold.co/600x400/9b59b6/ffffff?text=خط+عربي",
+      image: "img\\16.jpg",
       longDescription:
         "معرض الخط العربي هو تظاهرة فنية تهدف إلى إبراز جمال فن الخط العربي من خلال أعمال فنانين سوريين معاصرين. يضم المعرض أكثر من 100 لوحة خطية تتنوع بين أنواع الخطوط العربية المختلفة من الكوفي إلى النسخ إلى الثلث إلى الديواني. يشارك في المعرض نخبة من خطاطي سوريا البارزين، كما يشمل أعمالًا لفنانين شباب واعد. يتميز المعرض بإقامة ورش عمل مباشرة في فن الخط العربي يقدمها خطاطون محترفون، حيث يمكن للزوار تعلم أساسيات الخط العربي وتجربة الكتابة بأنفسهم. يعتبر هذا المعرض فرصة فريدة لعشاق الفن الإسلامي للاستمتاع بأجمل الأعمال الخطية في قلب دمشق.",
       organizer: "جمعية الخطاطين في سوريا",
@@ -850,7 +846,7 @@ document.addEventListener("DOMContentLoaded", function () {
       date: "2024-12-28",
       location: "حمص",
       category: "handmade",
-      image: "https://placehold.co/600x400/2ecc71/ffffff?text=سوق+تراثي",
+      image: "img\\17.jpg",
       longDescription:
         "سوق التراث هو مهرجان سنوي يقام في مدينة حمص، ويهدف إلى إحياء التراث السوري من خلال عرض المنتجات التقليدية من مختلف المحافظات. يضم السوق أكثر من 80 عارضًا يقدمون منتجات متنوعة تشمل الملابس التراثية، الأدوات المنزلية التقليدية، الألعاب الشعبية، والحرف اليدوية. يتميز السوق بإقامة عروض حية للحرف التقليدية مثل النسيج على المنسج اليدوي، التطريز، وصناعة النحاسيات. كما يشمل السوق فقرات ترفيهية للعائلات مثل عروض الدمى والحكواتي. يقام السوق في أجواء احتفالية مع موسيقى تراثية وأكلات شعبية.",
       organizer: "جمعية التراث السوري في حمص",
@@ -869,7 +865,7 @@ document.addEventListener("DOMContentLoaded", function () {
       date: "2025-01-05",
       location: "حلب",
       category: "sports",
-      image: "https://placehold.co/600x400/3498db/ffffff?text=شطرنج",
+      image: "img\\18.jpg",
       longDescription:
         "بطولة الشطرنج الوطنية هي حدث رياضي ذهني يجمع بين أفضل لاعبي الشطرنج في سوريا من مختلف الأعمار. تقام البطولة على مدار خمسة أيام في فندق بارون في حلب، وتضم 64 لاعبًا يتنافسون في نظام خروج المغلوب. تتميز البطولة بوجود حكام دوليين وإشراف الاتحاد السوري للشطرنج، مع توفير بث حي للمباريات على الإنترنت. يشمل البرنامج فعاليات جانبية مثل محاضرات في استراتيجيات الشطرنج وورش عمل لتعليم أساسيات اللعبة للأطفال. تعتبر البطولة فرصة لعشاق الشطرنج لمشاهدة أفضل اللاعبين في سوريا وهم يتنافسون في أجواء احترافية.",
       organizer: "الاتحاد السوري للشطرنج",
@@ -889,7 +885,7 @@ document.addEventListener("DOMContentLoaded", function () {
       date: "2025-01-12",
       location: "دمشق",
       category: "music",
-      image: "https://placehold.co/600x400/f39c12/ffffff?text=موسيقى+كلاسيكية",
+      image: "img\\19.jpg",
       longDescription:
         "حفل موسيقى كلاسيكية هو تظاهرة فنية راقية تقام في دار الأوبرا في دمشق، وتقدمها الأوركسترا السيمفونية السورية. يضم الحفل أداءً لأشهر المقطوعات الموسيقية الكلاسيكية لمؤلفين عالميين مثل بيتهوفن، موزارت، وتشايكوفسكي، بالإضافة إلى مقطوعات لمؤلفين سوريين. يتميز الحفل بمشاركة فنانين ضيوف من أوروبا، مما يضفي طابعًا دوليًا على الحدث. يقام الحفل في قاعة الأوبرا الفاخرة بدمشق، مع إضاءة خاصة وديكورات أنيقة تضفي جوًا من الرقي والفخامة. يعتبر هذا الحدث فرصة فريدة لعشاق الموسيقى الكلاسيكية للاستمتاع بأجمل المقطوعات في واحدة من أجمل قاعات الأوبرا في المنطقة.",
       organizer: "الأوركسترا السيمفونية السورية",
@@ -909,7 +905,7 @@ document.addEventListener("DOMContentLoaded", function () {
       date: "2025-01-20",
       location: "الحسكة",
       category: "handmade",
-      image: "https://placehold.co/600x400/2ecc71/ffffff?text=سجاد+يدوي",
+      image: "img\\20.jpg",
       longDescription:
         "معرض السجاد اليدوي هو تظاهرة فنية وحرفية تقام في مدينة الحسكة، وتهدف إلى إبراز جمال السجاد السوري المصنوع يدويًا. يضم المعرض أكثر من 200 قطعة سجاد من مختلف مناطق سوريا، من السجاد الحلبي المعروف بألوانه الزاهية إلى السجاد الدمشقي بأناقته وفخامته. يشارك في المعرض نخبة من الحرفيين السوريين الذين يعرضون تقنيات صناعة السجاد اليدوي أمام الزوار. يتميز المعرض بإقامة ورش عمل لتعليم أساسيات صناعة السجاد، كما يشمل مسابقة لأجمل قطعة سجاد يتم اختيارها من قبل لجنة تحكيم متخصصة. يعتبر هذا المعرض فرصة فريدة لعشاق الفنون التراثية لاقتناء قطع فريدة من السجاد السوري الأصيل.",
       organizer: "جمعية صناع السجاد في الحسكة",
@@ -1255,10 +1251,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const teamMembers = [
     {
       id: 1,
-      name: "أحمد محمد",
+      name: "Heba_302329",
       role: "المؤسس والمدير التنفيذي",
       bio: "خبير في إدارة الفعاليات الثقافية مع أكثر من 15 عاماً من الخبرة في تنظيم المهرجانات والفعاليات الكبرى في سوريا.",
-      image: "https://placehold.co/600x600/e74c3c/ffffff?text=أحمد",
+      image: "img\\team1.jpg",
       social: {
         facebook: "#",
         twitter: "#",
@@ -1268,10 +1264,10 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     {
       id: 2,
-      name: "ليلى حسن",
+      name: "mohammad_299901",
       role: "مديرة المحتوى",
       bio: "صحفية وكاتبة متخصصة في الثقافة والفنون، مسؤولة عن تطوير المحتوى وضمان جودة المعلومات المقدمة على المنصة.",
-      image: "https://placehold.co/600x600/3498db/ffffff?text=ليلى",
+      image: "img\\team2.jpg",
       social: {
         facebook: "#",
         twitter: "#",
@@ -1281,10 +1277,10 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     {
       id: 3,
-      name: "محمود علي",
+      name: "Yamen_283898",
       role: "مدير التكنولوجيا",
       bio: "مهندس برمجيات متخصص في تطوير المنصات الرقمية، مسؤول عن الجانب التقني للمنصة وتطوير ميزاتها الجديدة.",
-      image: "https://placehold.co/600x600/2ecc71/ffffff?text=محمود",
+      image: "img\\team3.jpg",
       social: {
         facebook: "#",
         twitter: "#",
@@ -1294,10 +1290,10 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     {
       id: 4,
-      name: "سارة إبراهيم",
+      name: "mohmmed_287571",
       role: "مديرة التسويق",
       bio: "خبيرة تسويق رقمي مع خبرة في الترويج للفعاليات الثقافية والفنية، مسؤولة عن استراتيجيات التسويق والعلاقات العامة.",
-      image: "https://placehold.co/600x600/f39c12/ffffff?text=سارة",
+      image: "img\\team5.jpg",
       social: {
         facebook: "#",
         twitter: "#",
@@ -1307,10 +1303,10 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     {
       id: 5,
-      name: "عمر خالد",
+      name: "nour_aldeen_283981",
       role: "مدير الشراكات",
       bio: "متخصص في بناء الشراكات الاستراتيجية مع المؤسسات الثقافية والفنية، مسؤول عن توسيع شبكة شركاء المنصة.",
-      image: "https://placehold.co/600x600/9b59b6/ffffff?text=عمر",
+      image: "img\\team4.jpg",
       social: {
         facebook: "#",
         twitter: "#",
